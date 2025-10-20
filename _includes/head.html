@@ -11,7 +11,7 @@
 
   <!-- SEO -->
   <meta name="description" content="{{ page.description | capitalize | default: header_.description | strip_html | truncate: 50 }}">
-  <meta name="author" content="{{ page.author | default: author_ }}">
+  <meta name="author" content="{{ page.author.name | default: author_ }}">
   <meta property="og:title" content="{{ page.title | capitalize | default: site_title }}">
   <meta property="og:locale" content="{{ default_.lang | replace: "-", "_" | default: "en_US" }}">
   <meta property="og:locale:alternate" content="en_US">

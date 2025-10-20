@@ -3,6 +3,7 @@ layout: page
 title: "About"
 banner: /assets/images/rawfeed.png
 author:
+  name: "William C. Canin"
   url: https://williamcanin.github.io
 permalink: /about/
 ---
