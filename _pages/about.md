@@ -26,12 +26,6 @@ aesthetics and performance.
 
 We believe that design and code should be simple enough to disappear—and let the content shine.
 
-## Contribute
-
-Contributions are welcome!
-If you want to suggest improvements, report bugs, or submit new themes, please open an **issue** or
-**pull request** on the project.
-
 ---
 
 **rawfeed** — *A raw source of minimal web themes.*
