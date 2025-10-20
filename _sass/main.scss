@@ -1,4 +1,5 @@
 @use "theme" as theme;
+@use "components";
 @use "base";
 @use "default";
 @use "page";
@@ -13,8 +14,8 @@
 
 :root[data-theme="light"] {
   --text-color: #{theme.theme-color(text, light)};
-  --primary-color: #{theme.theme-color(primary, light)};
-  --second-color: #{theme.theme-color(second, light)};
+  --color-link__light: #{theme.theme-color(color-link__light, light)};
+  --color-link__dark: #{theme.theme-color(color-link__dark, light)};
   --code-block-header-color: #{theme.theme-color(code-block-header-color, light)};
   --code-color: #{theme.theme-color(code-color, light)};
   --border-color: #{theme.theme-color(border-color, light)};

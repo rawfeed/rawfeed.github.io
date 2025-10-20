@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "Changelog"
-permalink: /jekyll/changelog/
+permalink: /rawfeed-jekyll/changelog/
 ---
 
-# Changelog
+{%- assign = tag = "/jekyll/releases/tag/" | prepend: "https://github.com/rawfeed" -%}
+
+# Changelog - `rawfeed-jekyll`
 
 All important changes to this project are listed here.
 
@@ -24,9 +25,11 @@ Big update!!!
 
 ### Changed
 
-- Replacing Gulp with Npm tasks -->
+- Replacing Gulp with Npm tasks (https://github.com/rawfeed/jekyll/releases/tag/v0.1.4) -->
 
-## [[0.1.4](https://github.com/rawfeed/jekyll/releases/tag/v0.1.4)] - 2025-10-15
+## [[0.1.4]({{ tag }}/v0.1.4)]
+
+**Released on: 2025-10-15**
 
 ### Added
 
@@ -42,13 +45,17 @@ Big update!!!
 - Correction on the resume page in print mode.
 - Improving footer inconsistency on mobile
 
-## [[0.1.3](https://github.com/rawfeed/jekyll/releases/tag/v0.1.3)] - 2025-10-14
+## [[0.1.3]({{ tag }}/v0.1.3)]
+
+**Released on: 2025-10-14**
 
 ### Bugfix
 
 - Bug fixes in the website style.
 
-## [[0.1.2](https://github.com/rawfeed/jekyll/releases/tag/v0.1.2)] - 2025-10-14
+## [[0.1.2]({{ tag }}/v0.1.2)]
+
+**Released on: 2025-10-14**
 
 ### Bugfix
 
@@ -113,7 +120,9 @@ reading_time:
   minutes_label: ["minute", "minutes"]
 ```
 
-## [[0.1.1](https://github.com/rawfeed/jekyll/releases/tag/v0.1.1)] - 2025-10-12
+## [[0.1.1]({{ tag }}/v0.1.1)]
+
+**Released on: 2025-10-12**
 
 ### Bugfix
 
@@ -121,7 +130,9 @@ reading_time:
   When using site with baseurl in _config.yml, all menu URLs and other files pointed to the wrong
   location. This release fixed this crucial bug.
 
-## [[0.1.0](https://github.com/rawfeed/jekyll/releases/tag/v0.1.0)] - 2025-10-12
+## [[0.1.0]({{ tag }}/v0.1.0)]
+
+**Released on: 2025-10-12**
 
 ### Added
 

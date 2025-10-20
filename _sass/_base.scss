@@ -1,3 +1,5 @@
+@use "components";
+
 * {
   outline: none !important;
 }
@@ -6,3 +8,6 @@ html {
   scroll-behavior: smooth;
 }
 
+.btn-preview {
+  @extend %button;
+}

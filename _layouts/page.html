@@ -14,7 +14,23 @@
           <img class="page-banner" src="{{ page.banner }}" alt="{{ page.title }}">
         {%- endif -%}
         </div>
-      <div class="content">{{ content }}</div>
+      <div class="content">
+        {%- if page.category == "product" -%}
+        <div style="text-align: center;">
+          <h1>{{ page.title | markdownify }}</h1>
+          <small>{{ page.description }}</small>
+          <br>
+          {%- if page.badge.url -%}
+            <a href="{{ page.badge.url }}"><img src="{{ page.badge.img-src }}" alt="{{ page.badge.alt }}" height="{{ page.badge.height }}"></a>
+          {%- endif -%}
+          <br><br>
+          {%- if page.btn.preview.url -%}
+          <a class="btn-preview" href="{{ page.btn.preview.url }}" target="_blank">{{ page.btn.preview.title }}</a>
+          {%- endif -%}
+        </div>
+        {%- endif -%}
+        {{ content | markdownify }}
+      </div>
     </div>
   </main>
   {% include footer.html %}

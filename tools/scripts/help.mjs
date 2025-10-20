@@ -27,7 +27,8 @@ function showMenu() {
   install ------------------ Install '${projectName}' dependencies
   build -------------------- Compile the website
   serve -------------------- Create a website preview server
-  clean -------------------- Remove ALL dependencies and builds from the website
+  clean:all ---------------- Remove ALL dependencies and builds from the website
+  clean:cache -------------- Remove cache Jekyll
   help --------------------- Print this menu
 
   ${kleur.gray(`© ${projectName} 2025`)}

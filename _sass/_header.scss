@@ -8,15 +8,16 @@
     margin: 0;
     letter-spacing: 1px;
     a {
-      color: var(--second-color) !important;
+      color: var(--color-link__dark) !important;
       &:hover {
         color: #f8f8f8 !important;
       }
     }
   }
   &-img {
-    border-radius: 5px;
+    border-radius: 6px;
     margin-bottom: 12px;
+    border: 2px dotted white;
   }
   &-description {
     margin: 0;

@@ -9,7 +9,8 @@
     "build": "node tools/scripts/build.mjs",
     "jekyll:serve": "JEKYLL_ENV=development; echo JEKYLL_ENV=$JEKYLL_ENV; bundle exec jekyll serve --host 127.0.0.1 --port 4000 --livereload",
     "serve": "npm run jekyll:serve",
-    "clean": "node tools/scripts/clean.mjs",
+    "clean:all": "node tools/scripts/clean.mjs --all",
+    "clean:cache": "node tools/scripts/clean.mjs --cache",
     "help": "node tools/scripts/help.mjs",
     "rake:tasks": "bundle exec rake --tasks"
   },

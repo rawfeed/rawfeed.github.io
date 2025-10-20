@@ -21,7 +21,7 @@
     border: 2px solid #181818;
 
     a {
-      color: var(--primary-color) !important;
+      color: var(--color-link__light) !important;
       font-weight: bold;
       transition: all 0.3s ease;
       text-decoration: none !important;
@@ -44,6 +44,10 @@
       color: #181818;
       width: 860px;
       margin: 0 auto;
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid #131313;
+      background-color: #f9f4eb;
     }
   }
 }

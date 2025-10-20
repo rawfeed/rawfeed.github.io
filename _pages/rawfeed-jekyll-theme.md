@@ -1,26 +1,29 @@
 ---
 layout: page
-title: "Jekyll Theme"
-permalink: /jekyll/
+category: product
+title: "Jekyll Theme — `rawfeed-jekyll`"
+description: A raw Jekyll theme for minimalists
+badge:
+  url: https://badge.fury.io/rb/rawfeed
+  img-src: https://badge.fury.io/rb/rawfeed.svg?icon=si%3Arubygems
+  alt: Gem Version
+  height: 18
+btn:
+  preview:
+    title: Theme Preview
+    url: https://rawfeed.github.io/jekyll/preview/
+permalink: /rawfeed-jekyll/
 ---
-
-<p align="center">
-  <small>A raw Jekyll theme for minimalists</small>
-  <br>
-  <a href="https://badge.fury.io/rb/rawfeed"><img src="https://badge.fury.io/rb/rawfeed.svg?icon=si%3Arubygems" alt="Gem Version" height="18"></a>
-  <br>
-  <a href="https://rawfeed.github.io/jekyll/preview/" target="_blank">Theme Preview</a>
-</p>
 
 # Requirements
 
 | Required | Version | How to verify | How to install                    |
 | -------- | ------- | ------------- | --------------------------------- |
-| Git      | >= 2    | `git -v`      | [Git](http://git-scm.com/)        |
-| Ruby     | >= 3.0  | `ruby -v`     | [Ruby](https://www.ruby-lang.org) |
+| Git      | >= 2    | `git -v`      | [Git](http://git-scm.com/){:target="_blank"}        |
+| Ruby     | >= 3.0  | `ruby -v`     | [Ruby](https://www.ruby-lang.org){:target="_blank"} |
 | Gem      | >= 3.0  | `gem -v`      | **Ruby** contains **Gem**         |
 | Bundler  | >= 2.0  | `bundler -v`  | `gem install bundler`             |
-| NodeJs   | >= 20   | `node -v`     | [NodeJS](https://nodejs.org)      |
+| NodeJs   | >= 20   | `node -v`     | [NodeJS](https://nodejs.org){:target="_blank"}      |
 | Npm      | >= 9    | `npm -v`      | **NodeJS** contains **Npm**       |
 
 # Features
@@ -97,13 +100,13 @@ go into production mode (`npm run build`).
 
 **Comments:**
 
-Post comments use [Giscus](https://giscus.app) or [Disqus](https://disqus.com),
+Post comments use [Giscus](https://giscus.app){:target="_blank"} or [Disqus](https://disqus.com){:target="_blank"},
 configurable in the `_config.yml` file under `section: [blog]`. Whichever one you choose,
 you must set the appropriate settings in the `_config.yml` file under `section: [blog]`, and
 each post must have `comments: true` set.
 
-To learn more about both, such as how to set them up, visit [Giscus](https://giscus.app) or
-[Disqus](https://disqus.com).
+To learn more about both, such as how to set them up, visit [Giscus](https://giscus.app){:target="_blank"} or
+[Disqus](https://disqus.com){:target="_blank"}.
 
 # For developer
 
@@ -133,18 +136,18 @@ For more tasks, see: `bundle exec rake --tasks`
 
 [ Technologies and Services Used ]
 
-This [Jekyll](https://jekyllrb.com) theme was developed using the following services and
+This [Jekyll](https://jekyllrb.com){:target="_blank"} theme was developed using the following services and
 technologies, to whom we would like to thank for their work and availability:
 
 | Vendor | Link | Use in Theme |
 | -------- | ------- | ------- |
-| **Bootstrap 5** | [https://getbootstrap.com](https://getbootstrap.com/) | Framework for responsive design and base components |
-| **Font Awesome** | [https://fontawesome.com](https://fontawesome.com/) | Providing vector icons |
-| **Google Fonts** | [https://fonts.google.com](https://fonts.google.com/) | Styling and appearance of texts (custom fonts) |
-| **Google Apps Script** | [https://developers.google.com/apps-script](https://developers.google.com/apps-script) | Email sending and form processing functionality (Contact page). |
-| **Google reCAPTCHA** | [https://www.google.com/recaptcha/about/](https://www.google.com/recaptcha/about/) | Form spam protection (if implemented). |
-| **Giscus** | [https://giscus.app](https://giscus.app/) | *GitHub Discussions-based commenting system option* |
-| **Disqus** | [https://disqus.com](https://disqus.com/) | *Comment system option* |
+| **Bootstrap 5** | [https://getbootstrap.com](https://getbootstrap.com/){:target="_blank"} | Framework for responsive design and base components |
+| **Font Awesome** | [https://fontawesome.com](https://fontawesome.com/){:target="_blank"} | Providing vector icons |
+| **Google Fonts** | [https://fonts.google.com](https://fonts.google.com/){:target="_blank"} | Styling and appearance of texts (custom fonts) |
+| **Google Apps Script** | [https://developers.google.com/apps-script](https://developers.google.com/apps-script){:target="_blank"} | Email sending and form processing functionality (Contact page). |
+| **Google reCAPTCHA** | [https://www.google.com/recaptcha/about/](https://www.google.com/recaptcha/about/){:target="_blank"} | Form spam protection (if implemented). |
+| **Giscus** | [https://giscus.app](https://giscus.app/){:target="_blank"} | *GitHub Discussions-based commenting system option* |
+| **Disqus** | [https://disqus.com](https://disqus.com/){:target="_blank"} | *Comment system option* |
 
 ## Donation
 
@@ -162,4 +165,4 @@ See all version changes [here](/jekyll/changelog/)
 
 # License
 
-The theme is available as open source under the terms of [this License](/jekyll/license/).
+The theme is available as open source under the terms of [this License](/rawfeed-jekyll/license/).
