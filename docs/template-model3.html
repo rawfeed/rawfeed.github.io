@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rawfeed — Minimal Web Themes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f6f5f2;
+      background-color: #181818;
+      font-family: "Courier New", Courier, monospace;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #181818;
+      color: #f8f8f8;
+      padding: 1rem 0;
+      border-bottom: 4px solid #737373;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+    main {
+      padding: 2rem 0;
+      background-color: #f6f5f2;
+    }
+    .product-card {
+      border: 1px solid #ccc;
+      background-color: #f9f4eb;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 2px 2px 0 #ccc;
+      transition: 0.2s ease;
+      min-height: 200px;
+    }
+    .product-card:hover {
+      box-shadow: 4px 4px 0 #999;
+      transform: translate(-2px, -2px);
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+    .product-card p {
+      font-size: 0.95rem;
+      color: #737373;
+    }
+    footer {
+      background-color: #181818;
+      color: #f8f8f8;
+      border-top: 4px solid #737373;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #ffffff;
+    }
+    a {
+      color: #0044cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center">
+    <div class="container">
+      <h1>rawfeed</h1>
+      <p>A raw source of minimal web themes</p>
+    </div>
+  </header>
+
+  <main class="container-fluid">
+    <div class="container">
+    <section class="text-center mb-5">
+      <h2>Available Themes</h2>
+      <p>Simple, fast, and minimal themes for your favorite static site generators.</p>
+    </section>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="product-card">
+          <h3>Jekyll Theme — <code>rawfeed-jekyll</code></h3>
+          <p>A minimal theme for Jekyll with a console-style aesthetic and fast loading.</p>
+          <a href="#">View Details →</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <h3>Astro Theme — <code>rawfeed-astro</code></h3>
+          <p>A lightweight Astro theme for those who love retro design and markdown simplicity.</p>
+          <a href="#">View Details →</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <h3>11ty Theme — <code>rawfeed-11ty</code></h3>
+          <p>A straightforward Eleventy theme with no JS bloat and pure semantic HTML.</p>
+          <a href="#">View Details →</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>{{ options.title }}</h5>
+        <p>{{ options.tagline }}</p>
+        <p>Made with ❤️ by <a href="{{ options.author.url }}" target="_blank">{{ options.author.name }}</a></p>
+      </div>
+      <div class="col-md-2">
+        <h5>Company</h5>
+        {% for link in options.footer.company %}
+          <p><a href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col-md-2">
+        <h5>Projects</h5>
+        {% for link in options.footer.projects %}
+          <p><a href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col-md-2">
+        <h5>Community</h5>
+        {% for link in options.footer.community %}
+          <p><a href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
