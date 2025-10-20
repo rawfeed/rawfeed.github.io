@@ -33,7 +33,7 @@
       content="
         default-src 'self';
         img-src 'self' data: {{ head_.csp.img-src | join: ' ' }};
-        script-src 'self' {{ head_.csp.script-src | join: ' ' }};
+        script-src 'self' 'unsafe-inline' {{ head_.csp.script-src | join: ' ' }};
         style-src 'self' 'unsafe-inline' {{ head_.csp.style-src | join: ' ' }};
         font-src 'self' {{ head_.csp.font-src | join: ' ' }} data:;
         connect-src 'self' {{ head_.csp.connect-src | join: ' ' }};
