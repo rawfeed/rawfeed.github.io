@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-15T01:22:50-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml</id><title type="html">rawfeed</title><subtitle>A raw Jekyll theme for minimalists</subtitle><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-20T11:57:38-03:00</updated><id>https://rawfeed.github.io/feed.xml</id><title type="html">rawfeed</title><subtitle>A raw Jekyll theme for minimalists</subtitle><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/blog/content-styles-and-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>TOC</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
@@ -548,7 +548,7 @@
 <h2 id="success">Success</h2>
 
 <div class="alert alert-success">
-
+  
 <p>Congratulations! Your theme is working.</p>
 
 </div>
@@ -556,7 +556,7 @@
 <h2 id="danger">Danger</h2>
 
 <div class="alert alert-danger">
-
+  
 <p>Danger! Do not remove this example</p>
 
 </div>
@@ -564,7 +564,7 @@
 <h2 id="warning">Warning</h2>
 
 <div class="alert alert-warning">
-
+  
 <p>Warning! This is just an example</p>
 
 </div>
@@ -611,16 +611,16 @@
 
 <div class="container socials">
   <div class="row"><div class="col-sm d-flex justify-content-center"><strong>.&nbsp;</strong>
-
-
+      
+      
         <a class="socials-link" title="github" href="https://github.com/williamcanin/rawfeed" target="_blank">
           github
         </a><strong>&nbsp;.&nbsp;</strong>
-
+      
         <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">
           rubygems
         </a><strong>&nbsp;.&nbsp;</strong>
-
+      
     </div>
 
   </div>
@@ -782,7 +782,7 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>TOC</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
@@ -1140,7 +1140,7 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>TOC</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
@@ -1569,7 +1569,7 @@
 <h2 id="success">Success</h2>
 
 <div class="alert alert-success">
-
+  
 <p>Congratulations! Your theme is working.</p>
 
 </div>
@@ -1577,7 +1577,7 @@
 <h2 id="danger">Danger</h2>
 
 <div class="alert alert-danger">
-
+  
 <p>Danger! Do not remove this example</p>
 
 </div>
@@ -1585,7 +1585,7 @@
 <h2 id="warning">Warning</h2>
 
 <div class="alert alert-warning">
-
+  
 <p>Warning! This is just an example</p>
 
 </div>
@@ -1632,20 +1632,20 @@
 
 <div class="container socials">
   <div class="row"><div class="col-sm d-flex justify-content-center"><strong>.&nbsp;</strong>
-
-
+      
+      
         <a class="socials-link" title="github" href="https://github.com/williamcanin/rawfeed" target="_blank">
           github
         </a><strong>&nbsp;.&nbsp;</strong>
-
+      
         <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">
           rubygems
         </a><strong>&nbsp;.&nbsp;</strong>
-
+      
     </div>
 
   </div>
-</div>]]></content><author><name>William Canin</name></author><category term="example" /><category term="style" /><category term="include" /><category term="chart" /><summary type="html"><![CDATA[This post demonstrates post content styles]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-09-20T16:36:34-03:00</published><updated>2025-09-20T16:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</div>]]></content><author><name>William Canin</name></author><category term="example" /><category term="style" /><category term="include" /><category term="chart" /><summary type="html"><![CDATA[This post demonstrates post content styles]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://rawfeed.github.io/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-09-20T16:36:34-03:00</published><updated>2025-09-20T16:36:34-03:00</updated><id>https://rawfeed.github.io/blog/welcome-to-jekyll</id><content type="html" xml:base="https://rawfeed.github.io/blog/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
