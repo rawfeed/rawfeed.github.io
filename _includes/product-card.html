@@ -1,3 +1,5 @@
+{%- include data.liquid -%}
+
 <div class="col-md-4">
   <div class="product-card">
     <h3>{{ include.title }} — <code>{{ include.slug }}</code></h3>
@@ -7,7 +9,7 @@
     <a href="{{ include.url }}">View →</a>
     {%- else -%}
       <span class="badge" role="status" aria-label="draft">Shortly!</span>
-      {% comment %} <small>Become a developer!</small> {% endcomment %}
+      <div class="badge-small"><small>Become a developer! Help this theme get released, <a href="{{ include.url |  prepend: options.github.url }}" target="_blank">contribute!</a></small></div>
     {%- endif -%}
   </div>
 </div>

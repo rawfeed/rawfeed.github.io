@@ -7,10 +7,15 @@
   margin-bottom: 2rem;
   box-shadow: 2px 2px 0 #ccc;
   transition: 0.2s ease;
-  min-height: 230px;
+  min-height: 250px;
 
   .badge {
     @extend %badge;
+    &-small {
+      font-size: .87em;
+      color: #8a8a8a;
+      margin: 4px 0px;
+    }
   }
 
   &:hover {
