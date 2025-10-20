@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "About"
+banner: /assets/images/rawfeed.png
 permalink: /about/
 ---
 

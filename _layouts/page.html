@@ -9,6 +9,11 @@
   {% include header.html %}
   <main class="container-fluid page-main">
     <div class="container">
+      <div class="row">
+        {%- if page.url == "/about/" and page.banner -%}
+          <img class="page-banner" src="{{ page.banner }}" alt="{{ page.title }}">
+        {%- endif -%}
+        </div>
       <div class="content">{{ content }}</div>
     </div>
   </main>
