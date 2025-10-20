@@ -1,0 +1,31 @@
+{%- include data.liquid -%}
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>{{ options.title }}</h5>
+        <p>{{ options.tagline }}</p>
+        <p>Made with ❤️ by <a href="{{ options.author.url }}" target="_blank">{{ options.author.name }}</a></p>
+      </div>
+      <div class="col-md-2">
+        <h5>Company</h5>
+        {% for link in options.footer.company %}
+          <p><a href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col-md-2">
+        <h5>Projects</h5>
+        {% for link in options.footer.projects %}
+          <p><a href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col-md-2">
+        <h5>Community</h5>
+        {% for link in options.footer.community %}
+          <p><a href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>

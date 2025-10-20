@@ -1,0 +1,39 @@
+{
+  "name": "rawfeed.github.io",
+  "version": "0.1.0",
+  "description": "Rawfeed official website",
+  "type": "module",
+  "scripts": {
+    "install": "echo 'wait...' && bundle install",
+    "jekyll:build": "cross-env JEKYLL_ENV=production bundle exec jekyll build",
+    "build": "node tools/scripts/build.mjs",
+    "jekyll:serve": "JEKYLL_ENV=development; echo JEKYLL_ENV=$JEKYLL_ENV; bundle exec jekyll serve --host 127.0.0.1 --port 4000 --livereload",
+    "serve": "npm run jekyll:serve",
+    "clean": "node tools/scripts/clean.mjs",
+    "help": "node tools/scripts/help.mjs",
+    "rake:tasks": "bundle exec rake --tasks"
+  },
+  "repository": "git+https://github.com/rawfeed/rawfeed.github.io.git",
+  "keywords": [
+    "rawfeed",
+    "webiste",
+    "template",
+    "jekyll",
+    "retro"
+  ],
+  "author": "William C. Canin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rawfeed/rawfeed.github.io/issues"
+  },
+  "homepage": "https://rawfeed.github.io",
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "del": "^8.0.1",
+    "esbuild": "^0.25.11",
+    "execa": "^9.6.0",
+    "glob": "^11.0.3",
+    "html-minifier-terser": "^7.2.0",
+    "kleur": "^4.1.5"
+  }
+}

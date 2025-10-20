@@ -1,0 +1,48 @@
+# [ important!!! ] the base hostname & protocol for your site, e.g. http://example.com
+url: ""
+
+# the subpath of your site, e.g. /blog
+baseurl: ""
+
+# ---------- CAUTION!!! DO NOT move from here unless you REALLY know what you are doing. -----------
+
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  path: /feed.xml
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      published: true
+include: ["_pages"]
+permalink: "/blog/:title/"
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+exclude:
+  - node_modules
+  - .bundle-cache
+  - Gemfile
+  - Gemfile.lock
+  - package-lock.json
+  - package.json
+  - README.md
+  - Rakefile
+
+  # files below: developer modes
+  - docs
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - CHANGELOG.md
+  - LICENSE.txt
+  - tmp
+  - tools
+  - lib

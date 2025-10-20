@@ -1,0 +1,15 @@
+{%- include data.liquid -%}
+
+<!doctype html>
+<html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light">
+  {% include head.html %}
+  <body>
+    {% include navbar.html %}
+    {% include header.html %}
+    <main class="default">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+</html>

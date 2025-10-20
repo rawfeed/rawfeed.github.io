@@ -1,0 +1,113 @@
+title: website under construction!!!
+author:
+  name: "William C. Canin"
+  url: "https://williamcanin.github.io"
+
+github:
+  url: "https://github.com/rawfeed"
+
+tagline: "A raw source of minimal web themes."
+
+# section: [maintenance]
+maintenance:
+  enable: false
+  gif:
+  title: "Under maintenance"
+  subtitle: |
+    We are undergoing maintenance, with no return date yet.
+    Sorry for the inconvenience :/
+
+# section: [datelang]
+# Here you change the language of the months of the date
+datelang:
+  format: "%b %d, %Y"
+  lang: "en_US" # en_US | pt_PT | jp_JP | ch_CH | es_ES | fr_FR | it_IT | de_DE | ru_RU
+
+# section: [head]
+head:
+  # (CSP - Content-Security-Policy)
+  # IMPORTANT!!! If you use any external script from any website in your posts that is not on this
+  #              list, you must put it here.
+  #              --- If you don't use it, don't remove what's already there. ---
+  csp:
+    frame-src:
+      - https://www.google.com
+      - https://www.youtube.com
+    connect-src:
+      - https://www.google.com
+      - https://api.github.com
+    img-src:
+      - https://www.google.com
+      - https://media0.giphy.com
+      - https://media4.giphy.com
+      - https://github.githubassets.com
+    script-src:
+      - https://www.google.com
+      - https://www.gstatic.com
+      - https://cdn.jsdelivr.net
+      - https://cdnjs.cloudflare.com
+    style-src:
+      - https://cdnjs.cloudflare.com
+      - https://fonts.googleapis.com
+      - https://cdn.jsdelivr.net
+    font-src:
+      - https://fonts.gstatic.com
+      - https://cdnjs.cloudflare.com
+
+# section: [default]
+default:
+  lang: en-US
+  # Some compatible separators: ⨟∫⦁;⬨⬖︙︰𐄛🢝
+
+# section: [header]
+header:
+  title: rawfeed
+  description: "A raw source of minimal web themes."
+  avatar:
+    image: "rawfeed.png"
+
+# section: [blog]
+blog:
+  subtitle: "posts"
+  search:
+    enable: true
+    placeholder: "type here to search for a post or Esc to exit"
+    button_clean:
+      text: "clean"
+    results: "results"
+    no_results: "No results found"
+  post:
+    author: "Posted by"
+
+# section: [main_box]
+main_box:
+  title: "Welcome!"
+  text: "Explore our minimalist and retro themes with clean designs and a light look."
+
+# section: [grid]
+grid:
+  title: "Themes"
+  items:
+    - name: "Jekyll Theme"
+      image: /assets/images/jekyll.png
+      page_url: /jekyll/
+      description: |
+        A multi-functional Jekyll theme
+
+# section: [footer]
+footer:
+  company:
+    - { name: "About", url: "/about/" }
+    - { name: "Blog", url: "/blog/" }
+    - { name: "Contribute", url: "/contribute/" }
+  projects:
+    - { name: "Jekyll Theme", url: "/jekyll/" }
+  community:
+    - { name: "GitHub", url: "https://github.com/rawfeed" }
+  copyright:
+    title: "rawfeed"
+    since: 2025
+    message:
+  licenses:
+    title: "Licenses"
+    page_url: "/licenses/"
