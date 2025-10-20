@@ -3,7 +3,7 @@ layout: page
 permalink: /rawfeed-jekyll/changelog/
 ---
 
-{%- assign = tag = "/jekyll/releases/tag/" | prepend: "https://github.com/rawfeed" -%}
+{%- assign = tag = "/rawfeed-jekyll/releases/tag/" | prepend: "https://github.com/rawfeed" -%}
 
 # Changelog - `rawfeed-jekyll`
 
@@ -27,7 +27,7 @@ Big update!!!
 
 - Replacing Gulp with Npm tasks (https://github.com/rawfeed/jekyll/releases/tag/v0.1.4) -->
 
-## [[0.1.4]({{ tag }}/v0.1.4)]
+## [[0.1.4]({{ tag }}/v0.1.4){:target="_blank"}]
 
 **Released on: 2025-10-15**
 
@@ -45,7 +45,7 @@ Big update!!!
 - Correction on the resume page in print mode.
 - Improving footer inconsistency on mobile
 
-## [[0.1.3]({{ tag }}/v0.1.3)]
+## [[0.1.3]({{ tag }}/v0.1.3){:target="_blank"}]
 
 **Released on: 2025-10-14**
 
@@ -53,7 +53,7 @@ Big update!!!
 
 - Bug fixes in the website style.
 
-## [[0.1.2]({{ tag }}/v0.1.2)]
+## [[0.1.2]({{ tag }}/v0.1.2){:target="_blank"}]
 
 **Released on: 2025-10-14**
 
@@ -120,7 +120,7 @@ reading_time:
   minutes_label: ["minute", "minutes"]
 ```
 
-## [[0.1.1]({{ tag }}/v0.1.1)]
+## [[0.1.1]({{ tag }}/v0.1.1){:target="_blank"}]
 
 **Released on: 2025-10-12**
 
@@ -130,7 +130,7 @@ reading_time:
   When using site with baseurl in _config.yml, all menu URLs and other files pointed to the wrong
   location. This release fixed this crucial bug.
 
-## [[0.1.0]({{ tag }}/v0.1.0)]
+## [[0.1.0]({{ tag }}/v0.1.0){:target="_blank"}]
 
 **Released on: 2025-10-12**
 

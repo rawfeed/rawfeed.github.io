@@ -6,9 +6,9 @@ permalink: /contribute/
 
 Contributions are welcome!
 If you want to suggest improvements, report bugs, or submit new themes, please open an **issue** or
-**pull request** in one of [our projects](https://github.com/rawfeed/).
+**pull request** in one of [our projects](https://github.com/rawfeed/){:target="_blank"}.
 
-You can also contribute with a donation of coffee. Visit our [donation page](https://github.com/williamcanin/donations/blob/main/README.md) and you have a few options.
+You can also contribute with a donation of coffee. Visit our [donation page](https://github.com/williamcanin/donations/blob/main/README.md){:target="_blank"} and you have a few options.
 
 You choose which of your data will appear here, such as your **name**, **email**, **website**, etc.
 
