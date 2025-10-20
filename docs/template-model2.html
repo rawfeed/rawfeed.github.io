@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>rawfeed — vintage tech site</title>
+  <meta name="description" content="A raw source of minimal web themes — estilo clássico técnico (kernel.org, brendangregg)." />
+
+  <!-- Tipografia (só loading leve) -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset simples */
+    :root{
+      --bg: #f6f5f2;
+      --paper: #efe9dd;
+      --ink: #161616;
+      --muted: #666;
+      --accent: #222;
+      --max-width: 1100px;
+      --container-gap: 28px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: var(--bg);
+      color:var(--ink);
+      font-family: "Merriweather", Georgia, serif;
+      line-height:1.45;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:60px;
+    }
+
+    /* Top bar (clean, retro) */
+    .topbar{
+      background: linear-gradient(180deg,#111 0%, #0f0f0f 100%);
+      color:#fff;
+      padding:10px 0;
+      font-size:14px;
+    }
+    .topbar .brand{
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:0 var(--container-gap);
+    }
+    .brand .logo{
+      width:44px;
+      height:44px;
+      border-radius:3px;
+      background:#fff;
+      display:inline-block;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
+    }
+    .brand h1{
+      font-size:20px;
+      margin:0;
+      font-weight:400;
+      letter-spacing:0.02em;
+    }
+
+    /* Layout */
+    .wrap{
+      max-width:var(--max-width);
+      margin: 36px auto;
+      padding: 0 var(--container-gap);
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:36px;
+    }
+
+    /* Jumbotron/top hero (like kernel) */
+    .hero{
+      grid-column: 1 / -1;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border:1px solid rgba(0,0,0,0.06);
+      padding:44px 28px;
+      display:flex;
+      align-items:center;
+      gap:28px;
+      border-radius:4px;
+    }
+    .hero .text{
+      flex:1;
+    }
+    .hero h2{
+      margin:0 0 6px 0;
+      font-size:28px;
+      font-weight:700;
+      letter-spacing:0.01em;
+    }
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* Main column (posts) */
+    main.article-list{
+      background: transparent;
+    }
+    article.post{
+      background: var(--paper);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:18px;
+      margin-bottom:18px;
+      border-radius:3px;
+    }
+    article.post header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+    }
+    article.post h3{
+      margin:0 0 6px 0;
+      font-size:18px;
+    }
+    article.post .meta{
+      color:var(--muted);
+      font-size:13px;
+    }
+    article.post p.excerpt{
+      margin:10px 0 0 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* Sidebar */
+    aside.sidebar{
+      position:relative;
+    }
+    .card{
+      background: #fff;
+      border:1px solid rgba(0,0,0,0.06);
+      padding:14px;
+      margin-bottom:18px;
+      border-radius:3px;
+      font-size:14px;
+    }
+    nav.links a{
+      display:block;
+      color:var(--accent);
+      text-decoration:none;
+      padding:6px 0;
+      border-bottom:1px dashed rgba(0,0,0,0.04);
+    }
+    nav.links a:last-child{border-bottom:0}
+
+    /* Footer */
+    footer{
+      margin-top:48px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Code blocks */
+    pre,code{
+      font-family: "Roboto Mono", "Courier New", monospace;
+      background: #fff;
+      border:1px solid rgba(0,0,0,0.05);
+      padding:8px 10px;
+      overflow:auto;
+      border-radius:3px;
+      font-size:13px;
+    }
+    pre{padding:12px}
+
+    /* Small helpers */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+    .center{text-align:center}
+
+    /* Responsive */
+    @media (max-width: 940px){
+      .wrap{grid-template-columns:1fr; padding:0 18px}
+      .hero{padding:26px}
+      .brand h1{font-size:18px}
+      aside.sidebar{order:2}
+      main.article-list{order:1}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- topbar -->
+  <div class="topbar" role="banner">
+    <div class="brand" aria-hidden="false">
+      <span class="logo" aria-hidden="true"></span>
+      <h1>rawfeed</h1>
+      <div style="margin-left:auto" class="muted small">vintage technical style • minimal</div>
+    </div>
+  </div>
+
+  <!-- main content -->
+  <div class="wrap" role="main">
+
+    <!-- hero / jumbotron -->
+    <div class="hero" aria-label="Introdução">
+      <div class="text">
+        <h2>rawfeed</h2>
+        <p>A raw source of minimal web themes — arquivos, artigos e templates inspirados no universo indie e técnico.</p>
+      </div>
+      <div style="min-width:200px" class="center muted small">
+        <div style="font-weight:700; font-family: 'Roboto Mono', monospace; font-size:20px">/feed</div>
+        <div>static • fast • minimal</div>
+      </div>
+    </div>
+
+    <!-- principal: lista de posts -->
+    <main class="article-list" aria-label="Lista de artigos">
+      <!-- example post -->
+      <article class="post" id="post-1">
+        <header>
+          <div>
+            <h3><a href="#" style="color:var(--ink);text-decoration:none">Reflections on Minimal Static Themes</a></h3>
+            <div class="meta">William Canin — <time datetime="2025-10-20">Oct 20, 2025</time></div>
+          </div>
+          <div class="small muted">read: 3 min</div>
+        </header>
+        <p class="excerpt">Um texto curto sobre a filosofia por trás de temas minimalistas para Jekyll, Astro e 11ty — performance, legibilidade e simplicidade.</p>
+      </article>
+
+      <article class="post" id="post-2">
+        <header>
+          <div>
+            <h3><a href="#" style="color:var(--ink);text-decoration:none">Using Console-Style Fonts for Indie Themes</a></h3>
+            <div class="meta">Guest — <time datetime="2025-09-10">Sep 10, 2025</time></div>
+          </div>
+          <div class="small muted">read: 5 min</div>
+        </header>
+        <p class="excerpt">Como o visual de console afeta a experiência e quando aplicar: do monoespaço puro ao estilo “distressed”.</p>
+      </article>
+
+      <article class="post" id="post-3">
+        <header>
+          <div>
+            <h3><a href="#" style="color:var(--ink);text-decoration:none">Packaging your theme for distribution</a></h3>
+            <div class="meta">rawfeed — <time datetime="2025-07-01">Jul 01, 2025</time></div>
+          </div>
+          <div class="small muted">read: 7 min</div>
+        </header>
+        <p class="excerpt">Checklist prático para publicar um tema: README, exemplos, licenças e demos.</p>
+      </article>
+
+      <!-- snippet / code example -->
+      <article class="post" id="post-4">
+        <header>
+          <div>
+            <h3><a href="#" style="color:var(--ink);text-decoration:none">Example: Minimal Theme config</a></h3>
+            <div class="meta">rawfeed — <time datetime="2025-06-02">Jun 02, 2025</time></div>
+          </div>
+          <div class="small muted">read: 1 min</div>
+        </header>
+        <pre><code># _config.yml
+title: "rawfeed theme demo"
+description: "A minimal theme example for static site generators"
+theme: null
+</code></pre>
+      </article>
+    </main>
+
+    <!-- sidebar -->
+    <aside class="sidebar" aria-label="Barra lateral">
+      <div class="card">
+        <strong>About</strong>
+        <p class="small muted" style="margin:8px 0 0 0">rawfeed is a small collective crafting minimal themes for static site generators. Open source, low-dependency and easy to fork.</p>
+      </div>
+
+      <div class="card">
+        <strong>Recent</strong>
+        <nav class="links" aria-label="Links recentes">
+          <a href="#">Reflections on Minimal Static Themes</a>
+          <a href="#">Using Console-Style Fonts</a>
+          <a href="#">Packaging your theme</a>
+          <a href="#">Example: Minimal Theme config</a>
+        </nav>
+      </div>
+
+      <div class="card">
+        <strong>Feeds</strong>
+        <div class="small muted" style="margin-top:6px">
+          <div><a href="#" style="color:var(--accent)">atom.xml</a></div>
+          <div><a href="#" style="color:var(--accent)">rss.xml</a></div>
+          <div><a href="#" style="color:var(--accent)">rawfeed on GitHub</a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <strong>Tags</strong>
+        <div style="margin-top:8px">
+          <span style="display:inline-block;padding:6px 8px;margin:4px;background:#f3f0e8;border-radius:3px;font-size:13px">jekyll</span>
+          <span style="display:inline-block;padding:6px 8px;margin:4px;background:#f3f0e8;border-radius:3px;font-size:13px">astro</span>
+          <span style="display:inline-block;padding:6px 8px;margin:4px;background:#f3f0e8;border-radius:3px;font-size:13px">11ty</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div style="max-width:var(--max-width);margin:0 auto;padding:18px var(--container-gap);">
+      <div class="muted small">© 2025 rawfeed — crafted with minimal tooling • <a href="#" style="color:var(--accent)">license</a></div>
+    </div>
+  </footer>
+</body>
+</html>
