@@ -89,7 +89,7 @@ grid:
   title: "Themes"
   items:
     - name: "Jekyll Theme"
-      image: /assets/images/jekyll.png
+      image: #/assets/images/jekyll.png
       page_url: /jekyll/
       description: |
         A multi-functional Jekyll theme
