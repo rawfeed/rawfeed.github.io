@@ -2,7 +2,12 @@
   <div class="product-card">
     <h3>{{ include.title }} — <code>{{ include.slug }}</code></h3>
     <p>{{ include.description }}</p>
+    {%- if include.version != "" -%}
     <p>latest version: <a href="{{ include.url }}changelog/#{{ include.version |  replace: ".", "" }}">{{ include.version }}</a></p>
     <a href="{{ include.url }}">View →</a>
+    {%- else -%}
+      <span class="badge" role="status" aria-label="draft">Shortly!</span>
+      <small>Se você</small>
+    {%- endif -%}
   </div>
 </div>

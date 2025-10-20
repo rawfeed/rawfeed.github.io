@@ -53,7 +53,7 @@ permalink: /rawfeed-jekyll/
 # Installation
 
 ```shell
-git clone https://github.com/rawfeed/jekyll-starter.git "my-site"; cd my-site; rm -rf .git; npm install
+git clone https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"; cd my-site; rm -rf .git; npm install
 ```
 
 # Usage

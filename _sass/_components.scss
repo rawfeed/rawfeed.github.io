@@ -6,3 +6,34 @@
   padding: 10px;
   min-width: 100px;
 }
+
+%badge {
+  --bg-1: #efe6ca;
+  --bg-2: #e1d4b1;
+  --ink: #2b2b1f;
+  --edge: #c6b893;
+  --stitch: rgba(0,0,0,0.06);
+
+  display:inline-block;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight:700;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:0.35em 0.75em;
+  color:var(--ink);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.02) 0px,
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  border:1px solid var(--edge);
+  border-radius:6px;
+  position:relative;
+  line-height:1;
+  vertical-align:middle;
+}
