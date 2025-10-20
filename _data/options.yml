@@ -1,12 +1,12 @@
-title: website under construction!!!
+title: rawfeed
+tagline: "A raw source of minimal web themes."
+
 author:
   name: "William C. Canin"
   url: "https://williamcanin.github.io"
 
 github:
   url: "https://github.com/rawfeed"
-
-tagline: "A raw source of minimal web themes."
 
 # section: [maintenance]
 maintenance:
@@ -97,8 +97,9 @@ grid:
 # section: [footer]
 footer:
   company:
+    - { name: "Home", url: "/" }
     - { name: "About", url: "/about/" }
-    - { name: "Blog", url: "/blog/" }
+    # - { name: "Blog", url: "/blog/" }
     - { name: "Contribute", url: "/contribute/" }
   projects:
     - { name: "Jekyll Theme", url: "/jekyll/" }

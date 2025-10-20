@@ -2,23 +2,39 @@
 
 .page {
   @extend %markdown;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 30px 0px;
-  max-width: 860px;
-  margin: 100px auto;
-  &-title {
-    margin-bottom: 30px;
+  h1 {
+    margin: 0;
   }
-  &-content {
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid #8d8d8d;
+  &-body {
+    font-family: "Courier New", Courier, monospace !important;
+    color: #ffffff;
+    background-color: #fff;
+    border: 2px solid #181818;
+
+    a {
+      color: var(--primary-color) !important;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none !important;
+      &:hover {
+        color: black !important;
+      }
+    }
+    .donate {
+      a{
+        border-bottom: none !important;
+      }
+    }
   }
-  .logo {
-    width: 120px;
-    border-radius: 20px;
-    border: 1px solid rgba(0,0,0,.5);
+
+  &-main {
+    padding: 2rem 0;
+    background-color: #f6f5f2 !important;
+    min-height: 800px;
+    .content {
+      color: #181818;
+      width: 860px;
+      margin: 0 auto;
+    }
   }
 }

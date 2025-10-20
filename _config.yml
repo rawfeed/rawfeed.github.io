@@ -36,8 +36,6 @@ exclude:
   - package.json
   - README.md
   - Rakefile
-
-  # files below: developer modes
   - docs
   - CODE_OF_CONDUCT.md
   - CONTRIBUTING.md
@@ -45,4 +43,3 @@ exclude:
   - LICENSE.txt
   - tmp
   - tools
-  - lib

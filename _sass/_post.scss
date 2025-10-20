@@ -1,0 +1,5 @@
+@use "markdown";
+
+.post {
+  @extend %markdown;
+}

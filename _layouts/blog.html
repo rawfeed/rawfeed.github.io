@@ -1,16 +1,13 @@
 {%- include data.liquid -%}
 
-<!doctype html>
-<html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light">
+<!DOCTYPE html>
+<html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light" class="blog">
+<head>
   {% include head.html %}
-  <body>
-    {% include navbar.html %}
-    <main class="blog">
+</head>
+<body class="blog-body">
+  <main class="container-fluid blog-main">
       {{ content }}
-    </main>
-    {% include footer.html %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-    {% include scripts.html %}
-  </body>
+  </main>
+</body>
 </html>

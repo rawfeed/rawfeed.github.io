@@ -1,21 +1,8 @@
-body {
-  font-family: monospace !important;
-  background-color: #e4e4e4 !important;
-  a {
-    color: #a00 !important;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    text-decoration: none !important;
-    // border-bottom: 2px dotted #a00 !important;
-    // border-bottom: 2px solid transparent !important;
-    &:hover {
-      color: black !important;
-      // border-bottom: 2px dotted black !important;
-    }
-  }
-  .donate {
-    a{
-      border-bottom: none !important;
-    }
-  }
+* {
+  outline: none !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+

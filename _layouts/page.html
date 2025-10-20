@@ -1,15 +1,18 @@
-<!doctype html>
-<html lang="en">
+{%- include data.liquid -%}
+
+<!DOCTYPE html>
+<html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light" class="page">
+<head>
   {% include head.html %}
-  <body>
-    {% include navbar.html %}
-    <main class="page">
-      <div class="container">
-        <h1 class="page-title">{{ page.title }}</h1>
-        <div class="page-content">{{ content | markdownify }}</div>
-      </div>
-    </main>
-    {% include footer.html %}
-    {% include scripts.html %}
-  </body>
+</head>
+<body class="page-body">
+  {% include header.html %}
+  <main class="container-fluid page-main">
+    <div class="container">
+      <div class="content">{{ content }}</div>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
 </html>
+

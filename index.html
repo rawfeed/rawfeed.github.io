@@ -1,7 +1,31 @@
 ---
 layout: default
+title: "Home"
 ---
 
-{% include main-box.html %}
-{% include grid.html %}
+<div class="container">
+  <section class="text-center mb-5">
+    <h2>Available Themes</h2>
+    <p>Simple, fast, and minimal themes for your favorite static site generators.</p>
+  </section>
 
+  <div class="row justify-content-center">
+    {% include product-card.html
+       title="Jekyll Theme"
+       slug="rawfeed-jekyll"
+       description="A minimal theme for Jekyll with a console-style aesthetic and fast loading."
+       url="/jekyll/" %}
+
+    <!-- {% include product-card.html
+       title="Astro Theme"
+       slug="rawfeed-astro"
+       description="A lightweight Astro theme for those who love retro design and markdown simplicity."
+       url="/astro/" %}
+
+    {% include product-card.html
+       title="11ty Theme"
+       slug="rawfeed-11ty"
+       description="A straightforward Eleventy theme with no JS bloat and pure semantic HTML."
+       url="/11ty/" %} -->
+  </div>
+</div>
