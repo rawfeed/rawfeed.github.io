@@ -11,7 +11,7 @@ badge:
 btn:
   preview:
     title: Theme Preview
-    url: https://rawfeed.github.io/jekyll/preview/
+    url: https://rawfeed.github.io/rawfeed-jekyll/preview/
 permalink: /rawfeed-jekyll/
 ---
 

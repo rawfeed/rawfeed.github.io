@@ -11,3 +11,16 @@ html {
 .btn-preview {
   @extend %button;
 }
+
+a[target="_blank"]::after {
+  content: "↗";
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+a[target="_blank"]:hover::after {
+  opacity: 1;
+}
