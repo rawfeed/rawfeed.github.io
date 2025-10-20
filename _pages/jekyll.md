@@ -156,6 +156,10 @@ Click on the image below to be redirected the donation forms:
   </a>
 </div>
 
+# Changelog
+
+See all version changes [here](/jekyll/changelog/)
+
 # License
 
 The theme is available as open source under the terms of [this License](/jekyll/license/).
