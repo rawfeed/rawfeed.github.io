@@ -53,8 +53,7 @@ permalink: /rawfeed-jekyll/
 # Installation
 
 ```shell
-git clone https://github.com/rawfeed/jekyll-starter.git "my-site"; cd my-site; rm -rf .git
-npm install
+git clone https://github.com/rawfeed/jekyll-starter.git "my-site"; cd my-site; rm -rf .git; npm install
 ```
 
 # Usage
@@ -107,30 +106,6 @@ each post must have `comments: true` set.
 
 To learn more about both, such as how to set them up, visit [Giscus](https://giscus.app){:target="_blank"} or
 [Disqus](https://disqus.com){:target="_blank"}.
-
-# For developer
-
-**Clone and install:**
-
-```shell
-git clone https://github.com/rawfeed/jekyll.git; cd rawfeed; npm install
-```
-
-**Manage gem:**
-
-**(1)** - Compile the gem:
-
-```shell
-npm run gem
-```
-
-**(2)** - Publish the gem:
-
-```shell
-npm run publish
-```
-
-For more tasks, see: `bundle exec rake --tasks`
 
 # Vendors
 
