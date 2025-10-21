@@ -43,6 +43,8 @@ head:
       - https://github.githubassets.com
       - https://badge.fury.io
       - https://raw.githubusercontent.com
+      - https://d25lcipzij17d.cloudfront.net
+      - https://cloudfront.net
     script-src:
       - https://www.google.com
       - https://www.gstatic.com
