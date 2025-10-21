@@ -17,7 +17,7 @@
       <div class="content">
         {%- if page.category == "product" -%}
         <div style="text-align: center;">
-          <h1>{{ page.title | markdownify }}</h1>
+        <h1>{{ page.title }}&nbsp;—&nbsp;{%- if page.repo_name -%} <span style="font-size: .7em">{{ page.repo_name | markdownify }}</span>{%- endif-%}</h1>
           <small>{{ page.description }}</small>
           <br>
           {%- if page.badge.url -%}

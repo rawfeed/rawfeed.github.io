@@ -1,5 +1,4 @@
 %markdown {
-  // TODO: Não esta aplicando nas páginas
   h1 {
     font-size: 1.8rem;
   }
@@ -32,10 +31,13 @@
   }
 
   blockquote {
-    border-left: 2px solid var(--primary-color);
     padding: 15px 10px 1px 10px;
     font-style: italic;
     background-color: var(--blockquote-bg-color);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px solid #b3b3b3;
+    border-left: 5px solid #222222;
   }
 
   li {

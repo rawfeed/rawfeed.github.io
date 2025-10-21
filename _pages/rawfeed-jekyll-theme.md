@@ -1,7 +1,8 @@
 ---
 layout: page
 category: product
-title: "Jekyll Theme — `rawfeed-jekyll`"
+title: "Jekyll Theme"
+repo_name: "`rawfeed-jekyll`"
 description: A raw Jekyll theme for minimalists
 badge:
   url: https://badge.fury.io/rb/rawfeed
@@ -51,6 +52,8 @@ permalink: /rawfeed-jekyll/
 - and more [here](#vendors)
 
 # Installation
+
+Run the command below:
 
 ```shell
 git clone https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"; cd my-site; rm -rf .git; npm install
@@ -136,7 +139,7 @@ Click on the image below to be redirected the donation forms:
 
 # Changelog
 
-See all version changes [here](/jekyll/changelog/)
+See all version changes [here](/rawfeed-jekyll/changelog/)
 
 # License
 

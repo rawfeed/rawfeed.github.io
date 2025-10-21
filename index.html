@@ -5,6 +5,7 @@ title: "Home"
 
 <div class="container">
   <section class="text-center mb-5">
+    <!-- TODO: Mudar esse texto porque tem o astro e 11ty no card -->
     <h2>Available Themes</h2>
     <p>Simple, fast, and minimal themes for your favorite static site generators.</p>
   </section>
@@ -18,17 +19,18 @@ title: "Home"
        url="/rawfeed-jekyll/" %}
 
     {% include product-card.html
-       title="Astro Theme"
-       slug="rawfeed-astro"
-       version=""
-       description="A lightweight Astro theme for those who love retro design and markdown simplicity."
-       url="/rawfeed-astro/" %}
-
-    {% include product-card.html
        title="11ty Theme"
        slug="rawfeed-11ty"
        version=""
        description="A straightforward Eleventy theme with no JS bloat and pure semantic HTML."
        url="/rawfeed-11ty/" %}
+
+    <!-- {% include product-card.html
+       title="Astro Theme"
+       slug="rawfeed-astro"
+       version=""
+       description="A lightweight Astro theme for those who love retro design and markdown simplicity."
+       url="/rawfeed-astro/" %} -->
+
   </div>
 </div>

@@ -41,6 +41,8 @@ head:
       - https://media0.giphy.com
       - https://media4.giphy.com
       - https://github.githubassets.com
+      - https://badge.fury.io
+      - https://raw.githubusercontent.com
     script-src:
       - https://www.google.com
       - https://www.gstatic.com

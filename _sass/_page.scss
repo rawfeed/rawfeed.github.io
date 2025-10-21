@@ -2,9 +2,6 @@
 
 .page {
   @extend %markdown;
-  h1 {
-    margin: 0;
-  }
   &-banner {
     width: 250px;
     margin: 0 auto;
