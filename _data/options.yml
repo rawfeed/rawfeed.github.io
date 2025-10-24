@@ -1,4 +1,4 @@
-title: rawfeed
+title: "{rawfeed}"
 tagline: "A raw source of minimal web themes."
 
 author:
@@ -65,7 +65,7 @@ default:
 
 # section: [header]
 header:
-  title: rawfeed
+  title: "{rawfeed}"
   description: "A raw source of minimal web themes."
   avatar:
     image: "rawfeed_logo.png"
@@ -110,7 +110,7 @@ footer:
   community:
     - { name: "GitHub", url: "https://github.com/rawfeed" }
   copyright:
-    title: "rawfeed"
+    title: "{rawfeed}"
     since: 2025
     message:
   licenses:

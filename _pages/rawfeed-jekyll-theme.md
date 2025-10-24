@@ -24,7 +24,7 @@ permalink: /rawfeed-jekyll/
 | Ruby     | >= 3.0  | `ruby -v`     | [Ruby](https://www.ruby-lang.org){:target="_blank"} |
 | Gem      | >= 3.0  | `gem -v`      | **Ruby** contains **Gem**         |
 | Bundler  | >= 2.0  | `bundler -v`  | `gem install bundler`             |
-| NodeJs   | >= 20   | `node -v`     | [NodeJS](https://nodejs.org){:target="_blank"}      |
+| Node.js  | >= 20   | `node -v`     | [Node.js](https://nodejs.org){:target="_blank"}      |
 | Npm      | >= 9    | `npm -v`      | **NodeJS** contains **Npm**       |
 
 # Features

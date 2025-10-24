@@ -8,7 +8,9 @@ author:
 permalink: /about/
 ---
 
-[**rawfeed**](https://github.com/rawfeed) is a [GitHub](https://github.com/){:target="_blank"} organization created by [William Canin]({{ page.author.url }}){:target="_blank"} dedicated to creating **open-source themes and templates** for static
+{%- include data.liquid -%}
+
+[**{{ header_.title }}**](https://github.com/rawfeed) is a [GitHub](https://github.com/){:target="_blank"} organization created by [William Canin]({{ page.author.url }}){:target="_blank"} dedicated to creating **open-source themes and templates** for static
 site generators like [Jekyll](https://jekyllrb.com){:target="_blank"} ( in the future [11ty](https://www.11ty.dev){:target="_blank"}).
 
 Our focus is to deliver **minimalist designs**, **performance**, and **authentic experiences—no**
@@ -31,6 +33,6 @@ We believe that design and code should be simple enough to disappear—and let t
 
 ---
 
-**rawfeed** — *A raw source of minimal web themes.*
+**{{ header_.title }}** — *A raw source of minimal web themes.*
 
 
