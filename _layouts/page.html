@@ -9,15 +9,20 @@
   {% include header.html %}
   <main class="container-fluid page-main">
     <div class="container">
-      <div class="row">
-        {%- if page.url == "/about/" and page.banner -%}
+      {%- if page.url == "/about/" and page.banner -%}
+        <div class="row">
           <img class="page-banner" src="{{ page.banner }}" alt="{{ page.title }}">
-        {%- endif -%}
         </div>
+      {%- endif -%}
       <div class="content">
         {%- if page.category == "product" -%}
+          {%- if page.src_url -%}
+          <div class="row d-flex justify-content-end source-code">
+            <a href="{{page.src_url}}" target="_blank"><i class="fa-brands fa-github"></i></a>
+          </div>
+          {%- endif -%}
         <div style="text-align: center;">
-        <h1>{{ page.title }}&nbsp;—&nbsp;{%- if page.repo_name -%} <span style="font-size: .7em">{{ page.repo_name | markdownify }}</span>{%- endif-%}</h1>
+        <h1>{{ page.title }}{%- if page.repo_name -%} <span style="font-size: .7em">{{ page.repo_name | markdownify }}</span>{%- endif-%}</h1>
           <small>{{ page.description }}</small>
           <br>
           {%- if page.badge.url -%}

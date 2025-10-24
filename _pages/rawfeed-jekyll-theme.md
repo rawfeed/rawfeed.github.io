@@ -4,6 +4,7 @@ category: product
 title: "Jekyll Theme"
 repo_name: "`rawfeed-jekyll`"
 description: A raw Jekyll theme for minimalists
+src_url: https://github.com/rawfeed/rawfeed-jekyll
 badge:
   url: https://badge.fury.io/rb/rawfeed
   img-src: https://badge.fury.io/rb/rawfeed.svg?icon=si%3Arubygems

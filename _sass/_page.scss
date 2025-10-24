@@ -45,6 +45,24 @@
       border-radius: 15px;
       border: 1px solid #131313;
       background-color: #f9f4eb;
+
+      .source-code {
+        a{
+          text-align: right;
+          font-size: 2rem;
+          color: #131313 !important;
+          i{
+            border: 3px dotted;
+            border-radius: 50%;
+          }
+          &:hover {
+            opacity: .7;
+          }
+        }
+        a[target="_blank"]::after {
+          all: unset !important;
+        }
+      }
     }
   }
 }
