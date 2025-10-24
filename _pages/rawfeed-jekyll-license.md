@@ -27,3 +27,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+<!-- version: 0.2.0
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2025 `{rawfeed} <https://rawfeed.github.io>`
+
+This theme is licensed under the Creative Commons Attribution 4.0 International License.
+
+You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following conditions:
+
+**Attribution** — You must give appropriate credit, provide a link to the license, and indicate if
+changes were made.
+You may do so in any reasonable manner, **but not in any way that suggests the licensor endorses you
+or your use**.
+The attribution **must include the author's name and the original link**, visible on the website or
+derivative product.
+
+---
+
+"Theme developed by [{rawfeed}](https://rawfeed.github.io) — Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+
+-->
