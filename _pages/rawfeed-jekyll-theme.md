@@ -70,7 +70,7 @@ npm run help
 
 # Settings
 
-## Avatar
+## Avatar and Favicon
 
 **(1)** - Create the folder directory: `assets/images`.
 
@@ -92,6 +92,8 @@ avatar:
       dark: your_image_dark.png
     back: your_image_back.png
 ```
+
+For the favicon, you can do the same: place your favicon (.png) in the `assets/images` directory.
 
 ## Posts
 
