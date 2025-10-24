@@ -68,7 +68,7 @@ header:
   title: rawfeed
   description: "A raw source of minimal web themes."
   avatar:
-    image: "rawfeed.png"
+    image: "rawfeed_logo.png"
 
 # section: [blog]
 blog:
