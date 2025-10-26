@@ -50,6 +50,7 @@ permalink: /rawfeed-jekyll/
 - Maintenance page;
 - Comments on blog posts with Giscus or Disqus (only in production [jekyll build]);
 - Google Analytics (only in production [jekyll build]);
+- Page of Pixels (Images)
 - and more [here](#vendors)
 
 # Installation

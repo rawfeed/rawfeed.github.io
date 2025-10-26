@@ -10,7 +10,9 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
-<!-- ## [0.2.0] - 2025-10-xx
+## [[0.2.0]({{ tag }}/v0.2.0){:target="_blank"}]
+
+**Released on: 2025-10-26**
 
 ### Added
 
@@ -26,10 +28,9 @@ Big update!!!
 
 ### Changed
 
-- Replacing Gulp with Npm tasks (https://github.com/rawfeed/jekyll/releases/tag/v0.1.4)
+- Replacing Gulp with Npm tasks
 
 ---
--->
 
 ## [[0.1.4]({{ tag }}/v0.1.4){:target="_blank"}]
 
