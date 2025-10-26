@@ -1,204 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-20T11:59:47-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml</id><title type="html">rawfeed</title><subtitle>A raw Jekyll theme for minimalists</subtitle><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/" rel="alternate" type="text/html" /><updated>2025-10-26T14:25:42-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml</id><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Show" data-btn-hidden="Hidden">
+
   <div class="toc-head">
     <h2>TOC</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Show';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Show' : 'Hidden';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <h1 id="theology-h1">Theology (h1)</h1>
 
@@ -339,19 +149,19 @@
 <h1 id="images-or-gifs-example">Images or Gifs example</h1>
 
 <figure class="img-include-wrapper img-include-align-left" style="float: left; margin-right: 10px; width: 300px;">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNqM21hNWtxeWtkMTh0ajIwc3prYmt3dmV0a3ptY2RyMDJrejlrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="Hello!" style="display:block; width:100%; height: auto; border-radius: 2px; border: 2px solid #000;" /><figcaption class="img-include-caption">Example animated GIF — © Giphy</figcaption></figure>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNqM21hNWtxeWtkMTh0ajIwc3prYmt3dmV0a3ptY2RyMDJrejlrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="Hello!" style="display:block; width:100%; height: auto; border-radius: 2px; border: 1px solid #858585;" class="" /><figcaption class="img-include-caption">Example animated GIF — © Giphy</figcaption></figure>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.
 <em>Mauris lobortis nulla et felis ullamcorper bibendum.</em> Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
 
 <figure class="img-include-wrapper img-include-align-right" style="float: right; margin-left: 10px; width: 300px;">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNqM21hNWtxeWtkMTh0ajIwc3prYmt3dmV0a3ptY2RyMDJrejlrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="Hello!" style="display:block; width:100%; height: auto; border-radius: 2px; border: 2px solid #000;" /><figcaption class="img-include-caption">Example animated GIF — © Giphy</figcaption></figure>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNqM21hNWtxeWtkMTh0ajIwc3prYmt3dmV0a3ptY2RyMDJrejlrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="Hello!" style="display:block; width:100%; height: auto; border-radius: 2px; border: 1px solid #ddd;" class="" /><figcaption class="img-include-caption">Example animated GIF — © Giphy</figcaption></figure>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.
 <em>Mauris lobortis nulla et felis ullamcorper bibendum.</em> Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
 
 <figure class="img-include-wrapper img-include-align-center" style="width: 100%;">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNqM21hNWtxeWtkMTh0ajIwc3prYmt3dmV0a3ptY2RyMDJrejlrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="Hello!" style="display:block; width:100%; height: auto; border-radius: 2px; border: 2px solid #000;" /><figcaption class="img-include-caption">Example animated GIF — © Giphy</figcaption></figure>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNqM21hNWtxeWtkMTh0ajIwc3prYmt3dmV0a3ptY2RyMDJrejlrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="Hello!" style="display:block; width:100%; height: auto; border-radius: 2px; border: 1px solid #46e038;" class="" /><figcaption class="img-include-caption">Example animated GIF — © Giphy</figcaption></figure>
 
 <p>Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
 
@@ -372,100 +182,7 @@
 
 <h1 id="tabs-example">Tabs example</h1>
 
-<div class="tabs-start" aria-hidden="true"></div>
-
-<script>
-  (function () {
-    if (window.__simple_tabs_installed) return;
-    window.__simple_tabs_installed = true;
-
-    function processTabs() {
-      var starts = Array.from(document.querySelectorAll('.tabs-start'));
-      starts.forEach(function (start) {
-        var end = start.nextSibling;
-        while (end && !(end.nodeType === 1 && end.classList && end.classList.contains('tabs-end'))) {
-          end = end.nextSibling;
-        }
-        if (!end) return;
-
-        var node = start.nextSibling;
-        var tabs = [];
-        var currentTab = null;
-        while (node && node !== end) {
-          var next = node.nextSibling;
-          if (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()) {
-            node = next; continue;
-          }
-          var text = (node.textContent || '').trim();
-          var m = text.match(/^\s*tab\d*\s*:\s*(.+)$/i);
-          if (m) {
-            currentTab = { title: m[1].trim(), nodes: [] };
-            tabs.push(currentTab);
-            if (node.parentNode) node.parentNode.removeChild(node);
-          } else if (currentTab) {
-            currentTab.nodes.push(node);
-          } else {
-          }
-          node = next;
-        }
-
-        if (tabs.length === 0) {
-          return;
-        }
-
-        var wrap = document.createElement('div');
-        wrap.className = 'tabs-wrap';
-
-        var nav = document.createElement('div');
-        nav.className = 'tabs-nav';
-
-        var panels = document.createElement('div');
-        panels.className = 'tabs-panels';
-
-        tabs.forEach(function (tab, i) {
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
-          btn.setAttribute('data-idx', i);
-          btn.textContent = tab.title;
-          btn.addEventListener('click', function () {
-            var idx = +this.getAttribute('data-idx');
-            wrap.querySelectorAll('.tab-btn').forEach(function (b) {
-              b.classList.toggle('active', +b.getAttribute('data-idx') === idx);
-            });
-            wrap.querySelectorAll('.tab-panel').forEach(function (p, pi) {
-              p.classList.toggle('active', pi === idx);
-            });
-          });
-          nav.appendChild(btn);
-
-          var panel = document.createElement('div');
-          panel.className = 'tab-panel' + (i === 0 ? ' active' : '');
-          tab.nodes.forEach(function (n) {
-            panel.appendChild(n.cloneNode(true));
-          });
-          panels.appendChild(panel);
-        });
-
-        wrap.appendChild(nav);
-        wrap.appendChild(panels);
-
-        start.parentNode.insertBefore(wrap, start);
-
-        var cur = start;
-        while (cur) {
-          var nx = cur.nextSibling;
-          if (cur.parentNode) cur.parentNode.removeChild(cur);
-          if (cur === end) break;
-          cur = nx;
-        }
-      });
-    }
-
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', processTabs);
-    else processTabs();
-  })();
-</script>
+<div id="tabs-start" class="tabs-start" aria-hidden="true"></div>
 
 <p>tab1: Installation</p>
 
@@ -480,63 +197,7 @@
 
 <h1 id="details-example">Details example</h1>
 
-<div class="details-start" data-summary="How install"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="How install"></div>
 
 <p>Here’s the <strong>expanded</strong> content — it may have Markdown, code, lists, etc.</p>
 
@@ -571,55 +232,20 @@
 
 <h1 id="charts-example">Charts example</h1>
 
-<canvas class="chart" id="chart-sales"> </canvas>
+<canvas class="chart" id="chart-sales" data-label="Sales" data-type="bar" data-labels="January,February,March,April,May" data-data="10,13,20,25,50" data-color="#00bfffff">
+</canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById("chart-sales");
-    if (!ctx) return;
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: "January,February,March,April,May".split(","),
-        datasets: [{
-          label: "Sales",
-          data: "10,13,20,25,50".split(",").map(Number),
-          borderColor: "#00bfffff",
-          backgroundColor: "#00bfffff33",
-          fill: true,
-          tension: 0.3,
-          borderWidth: 2,
-          pointRadius: 4,
-          pointHoverRadius: 6
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: true, labels: { color: '#444444' } } },
-        scales: {
-          x: { ticks: { color: '#131313' }, grid: { color: '#111111' } },
-          y: { ticks: { color: '#131313' }, grid: { color: '#111111' } }
-        }
-      }
-    });
-  });
-</script>
 
 <h1 id="socials-networks-links">Socials networks links</h1>
 
 <div class="container socials">
-  <div class="row"><div class="col-sm d-flex justify-content-center"><strong>.&nbsp;</strong>
+  <div class="row"><div class="col-sm d-flex justify-content-center" style="padding: 0 !important;">
       
       
-        <a class="socials-link" title="github" href="https://github.com/williamcanin/rawfeed" target="_blank">
-          github
-        </a><strong>&nbsp;.&nbsp;</strong>
+        <a class="socials-link" title="github" href="https://github.com/rawfeed/rawfeed-jekyll" target="_blank">github</a><strong class="separator">⨟</strong>
       
-        <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">
-          rubygems
-        </a><strong>&nbsp;.&nbsp;</strong>
+        <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">rubygems</a><strong class="separator">⨟</strong>
       
     </div>
 
@@ -782,207 +408,17 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Show" data-btn-hidden="Hidden">
+
   <div class="toc-head">
     <h2>TOC</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Show';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Show' : 'Hidden';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <h1 id="blockcodes">Blockcodes</h1>
 
@@ -1140,207 +576,17 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Show" data-btn-hidden="Hidden">
+
   <div class="toc-head">
     <h2>TOC</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Show';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Show' : 'Hidden';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <h1 id="theology-h1">Theology (h1)</h1>
 
@@ -1458,100 +704,7 @@
 
 <h1 id="tabs-example">Tabs example</h1>
 
-<div class="tabs-start" aria-hidden="true"></div>
-
-<script>
-  (function () {
-    if (window.__simple_tabs_installed) return;
-    window.__simple_tabs_installed = true;
-
-    function processTabs() {
-      var starts = Array.from(document.querySelectorAll('.tabs-start'));
-      starts.forEach(function (start) {
-        var end = start.nextSibling;
-        while (end && !(end.nodeType === 1 && end.classList && end.classList.contains('tabs-end'))) {
-          end = end.nextSibling;
-        }
-        if (!end) return;
-
-        var node = start.nextSibling;
-        var tabs = [];
-        var currentTab = null;
-        while (node && node !== end) {
-          var next = node.nextSibling;
-          if (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()) {
-            node = next; continue;
-          }
-          var text = (node.textContent || '').trim();
-          var m = text.match(/^\s*tab\d*\s*:\s*(.+)$/i);
-          if (m) {
-            currentTab = { title: m[1].trim(), nodes: [] };
-            tabs.push(currentTab);
-            if (node.parentNode) node.parentNode.removeChild(node);
-          } else if (currentTab) {
-            currentTab.nodes.push(node);
-          } else {
-          }
-          node = next;
-        }
-
-        if (tabs.length === 0) {
-          return;
-        }
-
-        var wrap = document.createElement('div');
-        wrap.className = 'tabs-wrap';
-
-        var nav = document.createElement('div');
-        nav.className = 'tabs-nav';
-
-        var panels = document.createElement('div');
-        panels.className = 'tabs-panels';
-
-        tabs.forEach(function (tab, i) {
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
-          btn.setAttribute('data-idx', i);
-          btn.textContent = tab.title;
-          btn.addEventListener('click', function () {
-            var idx = +this.getAttribute('data-idx');
-            wrap.querySelectorAll('.tab-btn').forEach(function (b) {
-              b.classList.toggle('active', +b.getAttribute('data-idx') === idx);
-            });
-            wrap.querySelectorAll('.tab-panel').forEach(function (p, pi) {
-              p.classList.toggle('active', pi === idx);
-            });
-          });
-          nav.appendChild(btn);
-
-          var panel = document.createElement('div');
-          panel.className = 'tab-panel' + (i === 0 ? ' active' : '');
-          tab.nodes.forEach(function (n) {
-            panel.appendChild(n.cloneNode(true));
-          });
-          panels.appendChild(panel);
-        });
-
-        wrap.appendChild(nav);
-        wrap.appendChild(panels);
-
-        start.parentNode.insertBefore(wrap, start);
-
-        var cur = start;
-        while (cur) {
-          var nx = cur.nextSibling;
-          if (cur.parentNode) cur.parentNode.removeChild(cur);
-          if (cur === end) break;
-          cur = nx;
-        }
-      });
-    }
-
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', processTabs);
-    else processTabs();
-  })();
-</script>
+<div id="tabs-start" class="tabs-start" aria-hidden="true"></div>
 
 <p>tab1: Installation</p>
 
@@ -1592,55 +745,20 @@
 
 <h1 id="charts-example">Charts example</h1>
 
-<canvas class="chart" id="chart-sales"> </canvas>
+<canvas class="chart" id="chart-sales" data-label="Sales" data-type="bar" data-labels="January,February,March,April,May" data-data="10,13,20,25,50" data-color="#3c7052ff">
+</canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById("chart-sales");
-    if (!ctx) return;
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: "January,February,March,April,May".split(","),
-        datasets: [{
-          label: "Sales",
-          data: "10,13,20,25,50".split(",").map(Number),
-          borderColor: "#3c7052ff",
-          backgroundColor: "#3c7052ff33",
-          fill: true,
-          tension: 0.3,
-          borderWidth: 2,
-          pointRadius: 4,
-          pointHoverRadius: 6
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: true, labels: { color: '#444444' } } },
-        scales: {
-          x: { ticks: { color: '#131313' }, grid: { color: '#111111' } },
-          y: { ticks: { color: '#131313' }, grid: { color: '#111111' } }
-        }
-      }
-    });
-  });
-</script>
 
 <h1 id="socials-networks-links">Socials networks links</h1>
 
 <div class="container socials">
-  <div class="row"><div class="col-sm d-flex justify-content-center"><strong>.&nbsp;</strong>
+  <div class="row"><div class="col-sm d-flex justify-content-center" style="padding: 0 !important;">
       
       
-        <a class="socials-link" title="github" href="https://github.com/williamcanin/rawfeed" target="_blank">
-          github
-        </a><strong>&nbsp;.&nbsp;</strong>
+        <a class="socials-link" title="github" href="https://github.com/rawfeed/rawfeed-jekyll" target="_blank">github</a><strong class="separator">⨟</strong>
       
-        <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">
-          rubygems
-        </a><strong>&nbsp;.&nbsp;</strong>
+        <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">rubygems</a><strong class="separator">⨟</strong>
       
     </div>
 
