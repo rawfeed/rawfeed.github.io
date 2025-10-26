@@ -10,6 +10,14 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.1]({{ tag }}/v0.2.1){:target="_blank"}]
+
+**Released on: 2025-10-26**
+
+### Bugfix
+
+- Critical error! Correcting URL error for images on the pixels page.
+
 ## [[0.2.0]({{ tag }}/v0.2.0){:target="_blank"}]
 
 **Released on: 2025-10-26**
