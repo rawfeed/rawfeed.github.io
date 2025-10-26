@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://rawfeed.github.io/rawfeed-jekyll/preview/pixels/first-my-pixel/</loc>
+<lastmod>2025-10-15T14:11:04-03:00</lastmod>
+</url>
+<url>
 <loc>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll/</loc>
 <lastmod>2025-09-20T16:36:34-03:00</lastmod>
 </url>
@@ -17,13 +21,22 @@
 <lastmod>2025-10-04T17:09:18-03:00</lastmod>
 </url>
 <url>
+<loc>https://rawfeed.github.io/rawfeed-jekyll/preview/any-page/</loc>
+</url>
+<url>
 <loc>https://rawfeed.github.io/rawfeed-jekyll/preview/contact/</loc>
 </url>
 <url>
 <loc>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/tags/</loc>
 </url>
 <url>
+<loc>https://rawfeed.github.io/rawfeed-jekyll/preview/pixels/</loc>
+</url>
+<url>
 <loc>https://rawfeed.github.io/rawfeed-jekyll/preview/</loc>
+</url>
+<url>
+<loc>https://rawfeed.github.io/rawfeed-jekyll/preview/licenses/</loc>
 </url>
 <url>
 <loc>https://rawfeed.github.io/rawfeed-jekyll/preview/resume/</loc>
