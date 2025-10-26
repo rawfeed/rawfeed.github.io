@@ -98,8 +98,8 @@ For the favicon, you can do the same: place your favicon (.png) in the `assets/i
 
 ## Posts
 
-Creating a blog post is very easy, first you create a draft (`npm run draft`) and after you finish
-the draft, you move it to the post with the command `npm run posts`.
+Creating a blog post is very easy, first you create a draft (`npm run create:draft`) and after you finish
+the draft, you move it to the post with the command `npm run post:draft`.
 
 > Note: If you start the server (`npm run serve`), drafts will appear in posts, but they will not
 go into production mode (`npm run build`).
@@ -107,7 +107,7 @@ go into production mode (`npm run build`).
 **Comments:**
 
 Post comments use [Giscus](https://giscus.app){:target="_blank"} or [Disqus](https://disqus.com){:target="_blank"},
-configurable in the `_config.yml` file under `section: [blog]`. Whichever one you choose,
+configurable in the `_data/options.yml` file under `section: [blog]`. Whichever one you choose,
 you must set the appropriate settings in the `_config.yml` file under `section: [blog]`, and
 each post must have `comments: true` set.
 
