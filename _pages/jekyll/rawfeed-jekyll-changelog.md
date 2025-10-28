@@ -10,6 +10,14 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.2]({{ tag }}/v0.2.2){:target="_blank"}]
+
+**Released on: 2025-10-27**
+
+### Bugfix
+
+- It's loading the _config.yml file instead of options.yml in the plugin `datelang`
+
 ## [[0.2.1]({{ tag }}/v0.2.1){:target="_blank"}]
 
 **Released on: 2025-10-26**
