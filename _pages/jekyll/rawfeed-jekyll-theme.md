@@ -103,15 +103,15 @@ If you want to change the MAIN colors of **rawfeed-jekyll**, you can also do tha
 
 ```css
 :root[data-theme="light"] {
-  --bg-color: #c2c2c2 !important; // background color
-  --primary-color: blue !important; // link color
-  --text-color: black !important; // text color
+  --bg-color: #c2c2c2 !important;
+  --primary-color: blue !important;
+  --text-color: black !important;
 }
 
 :root[data-theme="dark"] {
-  --bg-color: #222222 !important; // background color
-  --primary-color: cyan !important; // link color
-  --text-color: white !important; // text color
+  --bg-color: #222222 !important;
+  --primary-color: cyan !important;
+  --text-color: white !important;
 }
 ```
 
