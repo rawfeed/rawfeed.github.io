@@ -10,6 +10,19 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.4]({{ tag }}/v0.2.4){:target="_blank"}]
+
+**Released on: 2025-10-28**
+
+### Added
+
+- New functionality for customizing styles. Now you can create an `assets/css/custom.css` file
+  to customize it. See [documentation](https://rawfeed.github.io/rawfeed-jekyll#style)
+
+### Changed
+
+- Changing the Javascripts to fallback.
+
 ## [[0.2.3]({{ tag }}/v0.2.3){:target="_blank"}]
 
 **Released on: 2025-10-27**

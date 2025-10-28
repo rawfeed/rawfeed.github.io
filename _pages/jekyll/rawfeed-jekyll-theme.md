@@ -96,6 +96,27 @@ avatar:
 
 For the favicon, you can do the same: place your favicon (.png) in the `assets/images` directory.
 
+## Style
+
+If you want to change the MAIN colors of **rawfeed-jekyll**, you can also do that by simply creating the
+`assets/css/custom.css` file and adding the structure below for the **light** and **dark** themes:
+
+```css
+:root[data-theme="light"] {
+  --bg-color: #c2c2c2 !important; // background color
+  --primary-color: blue !important; // link color
+  --text-color: black !important; // text color
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #222222 !important; // background color
+  --primary-color: cyan !important; // link color
+  --text-color: white !important; // text color
+}
+```
+
+> Note: Don't forget the `!important`
+
 ## Posts
 
 Creating a blog post is very easy, first you create a draft (`npm run create:draft`) and after you finish
