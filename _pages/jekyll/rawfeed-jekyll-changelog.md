@@ -10,6 +10,14 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.5]({{ tag }}/v0.2.5){:target="_blank"}]
+
+**Released on: 2025-10-31**
+
+### Added
+
+- Add new feature to `/pub/` [#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5)
+
 ## [[0.2.4]({{ tag }}/v0.2.4){:target="_blank"}]
 
 **Released on: 2025-10-28**
