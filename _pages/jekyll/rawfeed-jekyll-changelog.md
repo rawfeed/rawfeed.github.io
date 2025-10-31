@@ -10,13 +10,21 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.6]({{ tag }}/v0.2.6){:target="_blank"}]
+
+**Released on: 2025-10-31**
+
+## Bugfix
+
+- Fix: Fixes the bug where the pub.html layout is not found in the theme. ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
+
 ## [[0.2.5]({{ tag }}/v0.2.5){:target="_blank"}]
 
 **Released on: 2025-10-31**
 
 ### Added
 
-- Add new feature to `/pub/` [#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5)
+- Add new feature to `/pub/` ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
 
 ## [[0.2.4]({{ tag }}/v0.2.4){:target="_blank"}]
 
