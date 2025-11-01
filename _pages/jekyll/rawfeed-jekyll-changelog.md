@@ -10,7 +10,7 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
-<!-- ## [[0.2.7]({{ tag }}/v0.2.7){:target="_blank"}]
+## [[0.2.7]({{ tag }}/v0.2.7){:target="_blank"}]
 
 **Released on: 2025-10-31**
 
@@ -18,7 +18,6 @@ All important changes to this project are listed here.
 
 - Set default value for margin-bottom ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/6))
 - Correcting relative URL error in the `pub` layout.
--->
 
 ## [[0.2.6]({{ tag }}/v0.2.6){:target="_blank"}]
 
