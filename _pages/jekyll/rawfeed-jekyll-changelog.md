@@ -10,6 +10,14 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.8]({{ tag }}/v0.2.8){:target="_blank"}]
+
+**Released on: 2025-11-05**
+
+## Bugfix
+
+- Correcting error in footer that was overlapping the page
+
 ## [[0.2.7]({{ tag }}/v0.2.7){:target="_blank"}]
 
 **Released on: 2025-10-31**
