@@ -10,6 +10,15 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.9]({{ tag }}/v0.2.9){:target="_blank"}]
+
+**Released on: 2026-03-14**
+
+## Update
+
+- SEO improvements
+- Upgrading to Google Analytics 4
+
 ## [[0.2.8]({{ tag }}/v0.2.8){:target="_blank"}]
 
 **Released on: 2025-11-05**
