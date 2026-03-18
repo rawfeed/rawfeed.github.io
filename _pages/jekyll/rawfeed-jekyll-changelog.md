@@ -10,6 +10,14 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.10]({{ tag }}/v0.2.10){:target="_blank"}]
+
+**Released on: 2026-03-18**
+
+## Bug
+
+- Correcting a bug in the Google Analytics 4 script and adding cookies to the 'config'.
+
 ## [[0.2.9]({{ tag }}/v0.2.9){:target="_blank"}]
 
 **Released on: 2026-03-14**
