@@ -10,6 +10,14 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.2.11]({{ tag }}/v0.2.11){:target="_blank"}]
+
+**Released on: 2026-03-19**
+
+## Bug
+
+- fix: changing CORS to text/plain instead of json
+
 ## [[0.2.10]({{ tag }}/v0.2.10){:target="_blank"}]
 
 **Released on: 2026-03-18**
