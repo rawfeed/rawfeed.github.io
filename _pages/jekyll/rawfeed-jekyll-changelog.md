@@ -10,6 +10,15 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.3.1]({{ tag }}/v0.3.1){:target="_blank"}]
+
+**Released on: 2026-04-04**
+
+## Bug
+
+- Correcting relative URL error
+
+
 ## [[0.3.0]({{ tag }}/v0.3.0){:target="_blank"}]
 
 **Released on: 2026-04-04**
