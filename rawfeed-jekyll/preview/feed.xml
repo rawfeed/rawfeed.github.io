@@ -1,16 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/" rel="alternate" type="text/html" /><updated>2026-03-19T13:15:56-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml</id><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Show" data-btn-hidden="Hidden">
-
-  <div class="toc-head">
-    <h2>TOC</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button"></button>
-  </div>
-  <div class="toc-list-wrapper">
-    <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
-  </div>
-</nav>
-
-<h1 id="theology-h1">Theology (h1)</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/" rel="alternate" type="text/html" /><updated>2026-04-04T18:07:11-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml</id><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<h1 id="theology-h1">Theology (h1)</h1>
 
 <p>Lorem ipsum dolor sit amet, <code class="language-plaintext highlighter-rouge">consectetur</code> adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
 
@@ -408,19 +396,7 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Show" data-btn-hidden="Hidden">
-
-  <div class="toc-head">
-    <h2>TOC</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button"></button>
-  </div>
-  <div class="toc-list-wrapper">
-    <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
-  </div>
-</nav>
-
-<h1 id="blockcodes">Blockcodes</h1>
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<h1 id="blockcodes">Blockcodes</h1>
 
 <p>An article with various blocks of highlighted code snippets.</p>
 
@@ -576,19 +552,7 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Show" data-btn-hidden="Hidden">
-
-  <div class="toc-head">
-    <h2>TOC</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button"></button>
-  </div>
-  <div class="toc-list-wrapper">
-    <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
-  </div>
-</nav>
-
-<h1 id="theology-h1">Theology (h1)</h1>
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<h1 id="theology-h1">Theology (h1)</h1>
 
 <p>Lorem ipsum dolor sit amet, <code class="language-plaintext highlighter-rouge">consectetur</code> adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
 
