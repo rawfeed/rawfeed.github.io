@@ -10,6 +10,21 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[0.3.0]({{ tag }}/v0.3.0){:target="_blank"}]
+
+**Released on: 2026-04-04**
+
+## Feature
+
+- Adding a donation page.
+- Improving the Table of Contents for posts and pages. Now it's floating!
+- New script example for a contact page in Google Apps Script.
+
+## Bug
+
+- SEO errors have been corrected.
+
+
 ## [[0.2.11]({{ tag }}/v0.2.11){:target="_blank"}]
 
 **Released on: 2026-03-19**
