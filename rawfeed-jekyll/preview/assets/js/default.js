@@ -1,1 +1,207 @@
-document.addEventListener("DOMContentLoaded",()=>{document.addEventListener("contextmenu",e=>e.preventDefault());const i=document.getElementById("avatarModal");if(i){const e=document.querySelectorAll(".avatar-flipper__open-true"),t=document.getElementById("modalAvatar"),o=document.querySelector(".navigation"),a=new bootstrap.Modal(i);e.forEach(s=>{s.addEventListener("click",()=>{const n=s.querySelector(".avatar-card"),h=s.querySelector(".avatar-back img").src;n.classList.add("flip-avatar"),n.addEventListener("animationend",()=>{n.classList.remove("flip-avatar"),t.src=h,a.show()},{once:!0})})}),i.addEventListener("shown.bs.modal",()=>{t.classList.remove("modal-avatar"),t.offsetWidth,t.classList.add("modal-avatar"),o.classList.remove("modal-active"),e.forEach(s=>s.classList.add("hidden"))}),i.addEventListener("hidden.bs.modal",()=>{e.forEach(s=>s.classList.remove("hidden"))})}const r=document.getElementById("top-link"),u=700;r&&(window.addEventListener("scroll",()=>{window.scrollY>u?r.classList.add("show"):r.classList.remove("show")}),r.addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})}));function l(e){if(window.giscusThemes){const o={giscus:{setConfig:{theme:e==="light"?window.giscusThemes.light:window.giscusThemes.dark}}},a=setInterval(()=>{const s=document.querySelector("iframe.giscus-frame");s&&(s.contentWindow.postMessage(o,"https://giscus.app"),clearInterval(a))},500);setTimeout(()=>{clearInterval(a)},4e3)}}const d=document.getElementById("toggle-theme"),m=document.documentElement;if(d){let t=function(o){m.setAttribute("data-theme",o),e&&(e.classList.remove("fa-sun","fa-moon"),e.classList.add(o==="dark"?"fa-sun":"fa-moon")),typeof l=="function"&&l(o),localStorage.setItem("theme",o)};const e=d.querySelector("i");t(localStorage.getItem("theme")||"light"),d.addEventListener("click",()=>{const a=m.getAttribute("data-theme")==="light"?"dark":"light";t(a)})}document.querySelectorAll("div.highlight, figure.highlight").forEach(e=>{const t=document.createElement("div");t.className="code-block-container";const o=document.createElement("div");o.className="code-block-header";const a=document.createElement("button");a.className="copy-btn",a.type="button",a.setAttribute("aria-label","Copy code");const s=document.createElement("i");s.className="fa-solid fa-clipboard",a.appendChild(s),o.appendChild(a),e.parentNode.insertBefore(t,e),t.appendChild(o),t.appendChild(e)}),document.addEventListener("click",e=>{const t=e.target.closest(".copy-btn");if(!t)return;const o=t.closest(".code-block-container");if(!o)return;const a=o.querySelector(".highlight, figure.highlight");if(!a)return;const s=a.querySelector("td.code"),n=s?s.innerText.trim():a.innerText.trim(),c=t.querySelector("i");navigator.clipboard.writeText(n).then(()=>{c.className="fa-solid fa-check",setTimeout(()=>c.className="fa-solid fa-clipboard",2e3)},()=>{c.className="fa-solid fa-xmark",setTimeout(()=>c.className="fa-solid fa-clipboard",2e3)})})});
+document.addEventListener("DOMContentLoaded", () => {
+  /* lock menu context (click right mouse)
+  --------------------------------------------------------------------------------------------------
+  */
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  /* avatar
+  -------------------------------------------------------------------------------------------------
+  */
+  const modalEl = document.getElementById('avatarModal');
+  if (modalEl) {
+    const flipperAvatars = document.querySelectorAll('.avatar-flipper__open-true');
+    const modalAvatar = document.getElementById('modalAvatar');
+    const navigation = document.querySelector('.navigation');
+    const bsModal = new bootstrap.Modal(modalEl);
+
+    flipperAvatars.forEach((flipper) => {
+      flipper.addEventListener("click", () => {
+        const card = flipper.querySelector('.avatar-card');
+        const backImage = flipper.querySelector('.avatar-back img');
+        const backImageSrc = backImage.src;
+
+        card.classList.add("flip-avatar");
+
+        card.addEventListener(
+          "animationend",
+          () => {
+            card.classList.remove("flip-avatar");
+
+            modalAvatar.src = backImageSrc;
+
+            bsModal.show();
+          },
+          { once: true }
+        );
+      });
+    });
+
+    modalEl.addEventListener("shown.bs.modal", () => {
+      modalAvatar.classList.remove("modal-avatar");
+      void modalAvatar.offsetWidth;
+      modalAvatar.classList.add("modal-avatar");
+      navigation.classList.remove("modal-active");
+
+      flipperAvatars.forEach((flipper) => flipper.classList.add("hidden"));
+    });
+
+    modalEl.addEventListener("hidden.bs.modal", () => {
+      flipperAvatars.forEach((flipper) => flipper.classList.remove("hidden"));
+    });
+  }
+
+
+  /* Show/disappear top button
+  --------------------------------------------------------------------------------------------------
+  */
+  const topButton = document.getElementById("top-link");
+  const scrollThreshold = 700;
+
+  if (topButton) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > scrollThreshold) {
+        topButton.classList.add("show");
+      } else {
+        topButton.classList.remove("show");
+      }
+    });
+
+    topButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* function Giscus
+  --------------------------------------------------------------------------------------------------
+  */
+  function setGiscusTheme(theme) {
+    // The function only executes if the themes object exists
+    if (window.giscusThemes) {
+      const giscusTheme = theme === 'light'
+        ? window.giscusThemes.light
+        : window.giscusThemes.dark;
+
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: giscusTheme
+          }
+        }
+      };
+
+      // Let's use a timeout to ensure the Giscus iframe is ready
+      const giscusInterval = setInterval(() => {
+        const giscusFrame = document.querySelector('iframe.giscus-frame');
+        // If the iframe exists in the document...
+        if (giscusFrame) {
+          // ...we sent the message...
+          giscusFrame.contentWindow.postMessage(message, 'https://giscus.app');
+          // ...and we stopped trying.
+          clearInterval(giscusInterval);
+        }
+      }, 500);
+
+      // As an extra safeguard, we stop trying after a few seconds
+      // to avoid creating an infinite loop if something goes wrong.
+      setTimeout(() => {
+        clearInterval(giscusInterval);
+      }, 4000); // Stop trying after 4 seconds
+    }
+  }
+
+  /* change theme light/dark
+  --------------------------------------------------------------------------------------------------
+  */
+  const toggleButton = document.getElementById('toggle-theme');
+  const root = document.documentElement;
+
+  if (toggleButton) {
+    const icon = toggleButton.querySelector('i');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+
+      if (icon) {
+        icon.classList.remove('fa-sun', 'fa-moon');
+        icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
+      }
+
+      if (typeof setGiscusTheme === 'function') {
+        setGiscusTheme(theme);
+      }
+
+      // if (avatar) {
+      //   avatar.src = theme === 'light'
+      //     ? avatar.dataset.light
+      //     : avatar.dataset.dark;
+      // }
+
+      localStorage.setItem('theme', theme);
+
+    }
+
+    // boot with saved or light
+    setTheme(localStorage.getItem('theme') || 'light');
+
+    // change theme on click
+    toggleButton.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      setTheme(next);
+    });
+  }
+
+
+  /* highlight code
+  --------------------------------------------------------------------------------------------------
+  */
+  document.querySelectorAll("div.highlight, figure.highlight").forEach(highlightBlock => {
+    const container = document.createElement("div");
+    container.className = "code-block-container";
+    const header = document.createElement("div");
+    header.className = "code-block-header";
+
+    // button copy
+    const button = document.createElement("button");
+    button.className = "copy-btn";
+    button.type = "button";
+    button.setAttribute("aria-label", "Copy code");
+
+    const icon = document.createElement("i");
+    icon.className = "fa-solid fa-clipboard";
+    button.appendChild(icon);
+
+    header.appendChild(button);
+
+    highlightBlock.parentNode.insertBefore(container, highlightBlock);
+    container.appendChild(header);
+    container.appendChild(highlightBlock);
+  });
+
+  // event delegation for copy buttons (works even on cloned nodes inside <details>)
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".copy-btn");
+    if (!btn) return;
+
+    const container = btn.closest(".code-block-container");
+    if (!container) return;
+
+    const highlightBlock = container.querySelector(".highlight, figure.highlight");
+    if (!highlightBlock) return;
+
+    const codeElement = highlightBlock.querySelector("td.code");
+    const textToCopy = codeElement ? codeElement.innerText.trim() : highlightBlock.innerText.trim();
+
+    const icon = btn.querySelector("i");
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      icon.className = "fa-solid fa-check";
+      setTimeout(() => (icon.className = "fa-solid fa-clipboard"), 2000);
+    }, () => {
+      icon.className = "fa-solid fa-xmark";
+      setTimeout(() => (icon.className = "fa-solid fa-clipboard"), 2000);
+    });
+  });
+
+});

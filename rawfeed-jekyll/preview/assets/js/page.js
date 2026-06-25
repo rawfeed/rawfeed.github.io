@@ -1,1 +1,225 @@
-document.addEventListener("DOMContentLoaded",()=>{if(document.getElementById("details-start")){let r=function(){document.querySelectorAll(".details-start").forEach(n=>{const o=n.getAttribute("data-summary")||"Details";let e=n.nextSibling;for(;e&&!(e.nodeType===1&&e.classList.contains("details-end"));)e=e.nextSibling;if(!e)return;let a=n.nextSibling;const d=[];for(;a&&a!==e;){const l=a.nextSibling;(a.nodeType===Node.ELEMENT_NODE||a.nodeType===Node.TEXT_NODE&&a.textContent.trim())&&d.push(a.cloneNode(!0)),a=l}const c=document.createElement("details"),m=document.createElement("summary");m.textContent=o,c.appendChild(m);const u=document.createElement("div");u.className="details-content-wrapper",d.forEach(l=>u.appendChild(l)),c.appendChild(u),n.parentNode.insertBefore(c,n);let i=n;for(;i;){const l=i.nextSibling;if(i.remove(),i===e)break;i=l}})};if(window.__jekyll_details_setup)return;window.__jekyll_details_setup=!0,document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r()}if(document.getElementById("tabs-start")){let r=function(){var t=Array.from(document.querySelectorAll(".tabs-start"));t.forEach(function(n){for(var o=n.nextSibling;o&&!(o.nodeType===1&&o.classList&&o.classList.contains("tabs-end"));)o=o.nextSibling;if(o){for(var e=n.nextSibling,a=[],d=null;e&&e!==o;){var c=e.nextSibling;if(e.nodeType===Node.TEXT_NODE&&!e.textContent.trim()){e=c;continue}var m=(e.textContent||"").trim(),u=m.match(/^\s*tab\d*\s*:\s*(.+)$/i);u?(d={title:u[1].trim(),nodes:[]},a.push(d),e.parentNode&&e.parentNode.removeChild(e)):d&&d.nodes.push(e),e=c}if(a.length!==0){var i=document.createElement("div");i.className="tabs-wrap";var l=document.createElement("div");l.className="tabs-nav";var h=document.createElement("div");h.className="tabs-panels",a.forEach(function(E,v){var p=document.createElement("button");p.type="button",p.className="tab-btn"+(v===0?" active":""),p.setAttribute("data-idx",v),p.textContent=E.title,p.addEventListener("click",function(){var b=+this.getAttribute("data-idx");i.querySelectorAll(".tab-btn").forEach(function(f){f.classList.toggle("active",+f.getAttribute("data-idx")===b)}),i.querySelectorAll(".tab-panel").forEach(function(f,x){f.classList.toggle("active",x===b)})}),l.appendChild(p);var g=document.createElement("div");g.className="tab-panel"+(v===0?" active":""),E.nodes.forEach(function(b){g.appendChild(b.cloneNode(!0))}),h.appendChild(g)}),i.appendChild(l),i.appendChild(h),n.parentNode.insertBefore(i,n);for(var s=n;s;){var C=s.nextSibling;if(s.parentNode&&s.parentNode.removeChild(s),s===o)break;s=C}}}})};if(window.__simple_tabs_installed)return;window.__simple_tabs_installed=!0,document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r()}const y=document.querySelectorAll('[id^="chart-"]');if(typeof Chart>"u")console.warn("Chart.js not loaded \u2014 skipping chart rendering");else for(const r of y){const t=r.dataset;if(!t||!t.type||!t.labels||!t.data){console.warn("Chart element missing required data attributes \u2014 skipping");continue}new Chart(r,{type:t.type,data:{labels:t.labels.split(","),datasets:[{label:t.label,data:t.data.split(",").map(Number),borderColor:t.color,backgroundColor:`${t.color}33`,fill:!0,tension:.3,borderWidth:2,pointRadius:4,pointHoverRadius:6}]},options:{responsive:!0,plugins:{legend:{display:!0,labels:{color:"#444444"}}},scales:{x:{ticks:{color:"#131313"},grid:{color:"#111111"}},y:{ticks:{color:"#131313"},grid:{color:"#111111"}}}}})}});
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* details
+  # ------------------------------------------------------------------------------------------------
+  */
+  const detailsStart = document.getElementById("details-start");
+
+  if (detailsStart) {
+    if (window.__jekyll_details_setup) return;
+      window.__jekyll_details_setup = true;
+
+      function initDetails(){
+        const starts = document.querySelectorAll('.details-start');
+        starts.forEach(start => {
+          const summary = start.getAttribute('data-summary') || 'Details';
+
+          let end = start.nextSibling;
+          while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
+            end = end.nextSibling;
+          }
+          if(!end) return;
+
+          let node = start.nextSibling;
+          const content = [];
+          while(node && node !== end){
+            const next = node.nextSibling;
+            if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
+              content.push(node.cloneNode(true));
+            }
+            node = next;
+          }
+
+          const details = document.createElement('details');
+          const sum = document.createElement('summary');
+          sum.textContent = summary;
+          details.appendChild(sum);
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'details-content-wrapper';
+
+          content.forEach(el => wrapper.appendChild(el));
+
+          details.appendChild(wrapper);
+
+          start.parentNode.insertBefore(details, start);
+          let cur = start;
+          while(cur){
+            const next = cur.nextSibling;
+            cur.remove();
+            if(cur === end) break;
+            cur = next;
+          }
+        });
+      }
+
+      if(document.readyState === 'loading')
+        document.addEventListener('DOMContentLoaded', initDetails);
+      else
+        initDetails();
+  }
+
+  /* tabs
+  # ------------------------------------------------------------------------------------------------
+  */
+  const tabsStart = document.getElementById("tabs-start");
+
+  if (tabsStart) {
+    if (window.__simple_tabs_installed) return;
+      window.__simple_tabs_installed = true;
+
+      function processTabs() {
+        var starts = Array.from(document.querySelectorAll('.tabs-start'));
+        starts.forEach(function (start) {
+          var end = start.nextSibling;
+          while (end && !(end.nodeType === 1 && end.classList && end.classList.contains('tabs-end'))) {
+            end = end.nextSibling;
+          }
+          if (!end) return;
+
+          var node = start.nextSibling;
+          var tabs = [];
+          var currentTab = null;
+          while (node && node !== end) {
+            var next = node.nextSibling;
+            if (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()) {
+              node = next; continue;
+            }
+            var text = (node.textContent || '').trim();
+            var m = text.match(/^\s*tab\d*\s*:\s*(.+)$/i);
+            if (m) {
+              currentTab = { title: m[1].trim(), nodes: [] };
+              tabs.push(currentTab);
+              if (node.parentNode) node.parentNode.removeChild(node);
+            } else if (currentTab) {
+              currentTab.nodes.push(node);
+            } else {
+            }
+            node = next;
+          }
+
+          if (tabs.length === 0) {
+            return;
+          }
+
+          var wrap = document.createElement('div');
+          wrap.className = 'tabs-wrap';
+
+          var nav = document.createElement('div');
+          nav.className = 'tabs-nav';
+
+          var panels = document.createElement('div');
+          panels.className = 'tabs-panels';
+
+          tabs.forEach(function (tab, i) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
+            btn.setAttribute('data-idx', i);
+            btn.textContent = tab.title;
+            btn.addEventListener('click', function () {
+              var idx = +this.getAttribute('data-idx');
+              wrap.querySelectorAll('.tab-btn').forEach(function (b) {
+                b.classList.toggle('active', +b.getAttribute('data-idx') === idx);
+              });
+              wrap.querySelectorAll('.tab-panel').forEach(function (p, pi) {
+                p.classList.toggle('active', pi === idx);
+              });
+            });
+            nav.appendChild(btn);
+
+            var panel = document.createElement('div');
+            panel.className = 'tab-panel' + (i === 0 ? ' active' : '');
+            tab.nodes.forEach(function (n) {
+              panel.appendChild(n.cloneNode(true));
+            });
+            panels.appendChild(panel);
+          });
+
+          wrap.appendChild(nav);
+          wrap.appendChild(panels);
+
+          start.parentNode.insertBefore(wrap, start);
+
+          var cur = start;
+          while (cur) {
+            var nx = cur.nextSibling;
+            if (cur.parentNode) cur.parentNode.removeChild(cur);
+            if (cur === end) break;
+            cur = nx;
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', processTabs);
+      else processTabs();
+  }
+
+  /* chart
+  # ------------------------------------------------------------------------------------------------
+  */
+
+  const chart_elements = document.querySelectorAll('[id^="chart-"]');
+
+  if (typeof Chart === 'undefined') {
+    console.warn('Chart.js not loaded — skipping chart rendering');
+  } else {
+    for (const ctx of chart_elements) {
+      const data = ctx.dataset;
+      if (!data || !data.type || !data.labels || !data.data) {
+        console.warn('Chart element missing required data attributes — skipping');
+        continue;
+      }
+
+      new Chart(ctx, {
+        type: data.type,
+        data: {
+          labels: data.labels.split(","),
+          datasets: [
+            {
+              label: data.label,
+              data: data.data.split(",").map(Number),
+              borderColor: data.color,
+              backgroundColor: `${data.color}33`,
+              fill: true,
+              tension: 0.3,
+              borderWidth: 2,
+              pointRadius: 4,
+              pointHoverRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              labels: {
+                color: "#444444"
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "#131313"
+              },
+              grid: {
+                color: "#111111"
+              }
+            },
+            y: {
+              ticks: {
+                color: "#131313"
+              },
+              grid: {
+                color: "#111111"
+              }
+            }
+          }
+        }
+      });
+    }
+  }
+
+});
