@@ -95,9 +95,13 @@ All important changes to this project are listed here.
 
 **Released on: 2026-04-04**
 
-## Bug
+### Bug
 
-- Correcting relative URL error
+- Correct relative URL error
+
+### Test
+
+- Add baseurl configuration for future relative URL testing
 
 ---
 
@@ -105,15 +109,25 @@ All important changes to this project are listed here.
 
 **Released on: 2026-04-04**
 
-## Feature
+### Feature
 
-- Adding a donation page.
-- Improving the Table of Contents for posts and pages. Now it's floating!
-- New script example for a contact page in Google Apps Script.
+- Add donation page with layout, config, cards, and script
+- Implement new floating Table of Contents (TOC)
+- Replace CoffeeScript with pure JavaScript (remove CoffeeScript support)
+- Add example contact script using Google Apps Script
+- Add `_data/screen/donation.yml` section
 
-## Bug
+### Bug
 
-- SEO errors have been corrected.
+- Correct TOC positioning in left layout
+- Fix TOC overflow
+- Correct script paths after restructuring
+- SEO errors corrected
+
+### Chore
+
+- Update license year
+- Update Gemfile.lock
 
 ---
 
@@ -121,7 +135,7 @@ All important changes to this project are listed here.
 
 **Released on: 2026-03-19**
 
-## Bug
+### Bug
 
 - fix: changing CORS to text/plain instead of json
 
@@ -131,9 +145,9 @@ All important changes to this project are listed here.
 
 **Released on: 2026-03-18**
 
-## Bug
+### Bug
 
-- Correcting a bug in the Google Analytics 4 script and adding cookies to the 'config'.
+- Fix bug in Google Analytics 4 script and add cookies to the 'config'
 
 ---
 
@@ -141,10 +155,12 @@ All important changes to this project are listed here.
 
 **Released on: 2026-03-14**
 
-## Update
+### Update
 
 - SEO improvements
-- Upgrading to Google Analytics 4
+- Upgrade to Google Analytics 4
+- Remove old Google Analytics JS
+- Update Gemfile.lock
 
 ---
 
@@ -152,9 +168,10 @@ All important changes to this project are listed here.
 
 **Released on: 2025-11-05**
 
-## Bugfix
+### Bugfix
 
-- Correcting error in footer that was overlapping the page
+- Correct error in footer that was overlapping the page
+- Change global margin-bottom to prevent layout issues
 
 ---
 
@@ -162,10 +179,11 @@ All important changes to this project are listed here.
 
 **Released on: 2025-10-31**
 
-## Bugfix
+### Bugfix
 
-- Set default value for margin-bottom ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/6))
-- Correcting relative URL error in the `pub` layout.
+- Set default value for margin-bottom ([#6](https://github.com/rawfeed/rawfeed-jekyll/issues/6))
+- Correct relative URL error in the `pub` layout ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
+- Add cursor pointer to paginator links
 
 ---
 
@@ -173,9 +191,9 @@ All important changes to this project are listed here.
 
 **Released on: 2025-10-31**
 
-## Bugfix
+### Bugfix
 
-- Fix: Fixes the bug where the pub.html layout is not found in the theme. ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
+- Fix bug where `pub.html` layout is not found in the theme ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
 
 ---
 
@@ -185,7 +203,7 @@ All important changes to this project are listed here.
 
 ### Added
 
-- Add new feature to `/pub/` ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
+- Add new feature to `/pub/` layout ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
 
 ---
 
@@ -197,10 +215,16 @@ All important changes to this project are listed here.
 
 - New functionality for customizing styles. Now you can create an `assets/css/custom.css` file
   to customize it. See [documentation](https://rawfeed.github.io/rawfeed-jekyll#style)
+- Add new URL for CSP
 
 ### Changed
 
-- Changing the Javascripts to fallback.
+- Change JavaScripts to fallback mode
+- Update to new rawfeed logo
+
+### Bugfix
+
+- Fix bug where form was not found with condition
 
 ---
 
@@ -210,7 +234,7 @@ All important changes to this project are listed here.
 
 ### Bugfix
 
-- It's loading the `_config.yml` file instead of `options.yml` in the plugin `reading_time`
+- Fix `reading_time` plugin loading from `_config.yml` instead of `options.yml`
 
 ---
 
@@ -220,7 +244,7 @@ All important changes to this project are listed here.
 
 ### Bugfix
 
-- It's loading the `_config.yml` file instead of `options.yml` in the plugin `datelang`
+- Fix `datelang` plugin loading from `_config.yml` instead of `options.yml`
 
 ---
 
@@ -230,7 +254,7 @@ All important changes to this project are listed here.
 
 ### Bugfix
 
-- Critical error! Correcting URL error for images on the pixels page.
+- Critical error! Fix URL error for images on the pixels page using `relative_url`
 
 ---
 
@@ -240,19 +264,36 @@ All important changes to this project are listed here.
 
 ### Added
 
-Big update!!!
+This is a major update with extensive changes:
 
-- Several bugs have been fixed, such as spacing inconsistencies and misapplied fonts.
-- Several features have been added, including: a new font, site options now in the
-**_data/options.yml** file, new commands, a new **pixel** layout, an image gallery, and many others.
-
-### Bugfix
-
-- HTML overflow fix
+- New **pixel** layout with dedicated page and post type
+- Site settings moved to `_data/options.yml` (replacing `_config.yml` for options)
+- New color schemes, layouts, and fonts
+- New commands for pixel layout manipulation
+- Add `with_class` plugin to add CSS classes to elements
+- Add TypeScript plugin support
+- Add plugin to auto-update page author
+- Add license layout
+- Add tag badges
+- Add SEO improvements
+- Add author metadata
+- Add `_data/constants.liquid` for centralized Liquid constants
+- Separate starter project into own directory
+- Convert JavaScript to CoffeeScript files
+- Add JavaScript fallback files
 
 ### Changed
 
-- Replacing Gulp with Npm tasks
+- Replace Gulp with Node.js/npm task runners
+- Use single `data.liquid` file to load constants
+- Update website URL to rawfeed organization
+- Change license to CC BY 4.0
+- Migrate settings from `_config.yml` to `_data/options.yml`
+
+### Bugfix
+
+- Fix HTML overflow
+- Fix spacing inconsistencies and font misapplications
 
 ---
 
@@ -262,17 +303,28 @@ Big update!!!
 
 ### Added
 
-- Adding copyright since and current date (year) automatically
-- Site security improvements with `CSP` tag
-- Color contrast improvement (accessibility)
-- Adding an "in_menu" option to pages. Now you can create pages without it being in the menu.
-- Adding emoji option to menu
+- Add CSP (Content Security Policy) security with SHA256 hash plugin
+- Add `in_menu` option to pages — pages can now be hidden from the menu
+- Add emoji option to menu items
+- Add copyright with "since" and current year auto-detection
+- Add `bootstrap.bundle.min.js` for Bootstrap JavaScript
+- Add pixel layout
+- Improve color contrast (accessibility)
+- Add CSP dynamic URL support in `_config.yml`
+
+### Changed
+
+- Replace `aria-hidden` with `inert` attribute
+- Improve resume page for print mode
+- Improve footer consistency on mobile
+- Change `site.text` to `site.strings` in `_config.yml`
+- Remove frame-ancestors 'none' from CSP
 
 ### Bugfix
 
-- Bug fixes in the website style.
-- Correction on the resume page in print mode.
-- Improving footer inconsistency on mobile
+- Fix lang attribute error in HTML tag
+- Fix details arrow rotation (90deg)
+- Fix layout inconsistencies across different layouts
 
 ---
 
@@ -282,7 +334,8 @@ Big update!!!
 
 ### Bugfix
 
-- Bug fixes in the website style.
+- Fix Portuguese language abbreviation detection in datelang plugin
+- Bug fixes in the website style
 
 ---
 
@@ -290,12 +343,17 @@ Big update!!!
 
 **Released on: 2025-10-14**
 
-### Bugfix
-
-- Fixing video include url bug
-- Markdown errors on pages have been fixed. Some styles were missing.
-
 ### Added
+
+- Add `datelang` plugin for localized date display
+- Add `reading_time` plugin for estimated reading time on posts and pages
+- Add Certificates section to resume page
+- Add Markdown text section to resume page
+- Add `.editorconfig` for consistent coding style
+- Add RubyGems version configuration
+- Add new example pages and posts
+
+### Configuration
 
 #### Sections to the Resume: "Certificate" add "Markdown text"
 
@@ -353,6 +411,14 @@ reading_time:
   minutes_label: ["minute", "minutes"]
 ```
 
+### Bugfix
+
+- Fix video include URL bug
+- Fix Markdown rendering errors and missing styles on pages
+- Fix list errors
+- Fix table styling with reset
+- Fix date error in draft and page frontmatter
+
 ---
 
 ## [[0.1.1]({{ tag }}/v0.1.1){:target="_blank"}]
@@ -361,9 +427,18 @@ reading_time:
 
 ### Bugfix
 
-- CRUCIAL! Fixing "relative_url" error for url with baseurl.
-  When using site with baseurl in _config.yml, all menu URLs and other files pointed to the wrong
+- CRUCIAL! Fix "relative_url" error for URL with baseurl.
+  When using site with baseurl in `_config.yml`, all menu URLs and other files pointed to the wrong
   location. This release fixed this crucial bug.
+- Fix title error
+- Fix installation URL
+- Fix script case where element ID is not found
+
+### Changed
+
+- Add fixed URLs across the entire site using `prepend`
+- Add min-width to TOC
+- Move blog search from external JS to inline HTML
 
 ---
 
