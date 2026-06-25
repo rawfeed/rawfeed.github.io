@@ -60,7 +60,7 @@ permalink: /rawfeed-jekyll/
 Run the commands below:
 
 ```shell
-git clone https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
+git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
 cd my-site
 rm -rf .git
 bundle install
