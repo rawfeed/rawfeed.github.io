@@ -38,3 +38,10 @@
   vertical-align:middle;
   opacity: .7;
 }
+
+.not_arrow_blank::after  {
+  content: "" !important;
+  font-size: unset;
+  margin-left: unset;
+  vertical-align: unset;
+}
