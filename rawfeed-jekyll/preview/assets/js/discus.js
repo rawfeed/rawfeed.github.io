@@ -1,1 +1,26 @@
-document.addEventListener("DOMContentLoaded",()=>{if(document.getElementById("disqus_thread")){var s="",i=function(){this.page.url="https://rawfeed.github.io/rawfeed-jekyll/preview/assets/js/discus.js",this.page.identifier="",this.page.disable_ads=!0,this.page.recommendations=!1};(function(){var e=document,t=e.createElement("script");t.src="//"+s+".disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)})()}});
+document.addEventListener("DOMContentLoaded", () => {
+  const discus = document.getElementById('disqus_thread');
+
+  if (discus) {
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
+     */
+    var disqus_shortname = '';
+
+    // The unique URL for the discussion, usually the post's permalink.
+    var disqus_config = function () {
+      this.page.url = '/rawfeed-jekyll/preview/assets/js/discus.js'; // Replace with your full permalink
+      this.page.identifier = ''; // Unique ID for the discussion, use page.id or page.url
+      this.page.disable_ads = true; // disabled ads
+      this.page.recommendations = false; // disabled recommendations
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+});
+

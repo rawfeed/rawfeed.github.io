@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/" rel="alternate" type="text/html" /><updated>2026-04-04T18:21:35-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/feed.xml</id><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<h1 id="theology-h1">Theology (h1)</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/rawfeed-jekyll/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="/rawfeed-jekyll/preview/" rel="alternate" type="text/html" /><updated>2026-06-25T00:47:02-03:00</updated><id>/rawfeed-jekyll/preview/feed.xml</id><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks</id><content type="html" xml:base="/rawfeed-jekyll/preview/blog/content-styles-and-codeblocks/"><![CDATA[<blockquote>
+  <p>Note: This post create with command: <code class="language-plaintext highlighter-rouge">bundle exec rawfeed create:draft</code>
+And then using the: <code class="language-plaintext highlighter-rouge">bundle exec rawfeed post:draft</code></p>
+</blockquote>
+
+<h1 id="theology-h1">Theology (h1)</h1>
 
 <p>Lorem ipsum dolor sit amet, <code class="language-plaintext highlighter-rouge">consectetur</code> adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
 
@@ -88,7 +93,9 @@
 <h1 id="line-separators">Line separators</h1>
 
 <hr />
+
 <hr />
+
 <hr />
 
 <h1 id="escaping-special-characters">Escaping special characters</h1>
@@ -223,19 +230,12 @@
 <canvas class="chart" id="chart-sales" data-label="Sales" data-type="bar" data-labels="January,February,March,April,May" data-data="10,13,20,25,50" data-color="#00bfffff">
 </canvas>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>if(!window.Chart){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/chart.js';document.head.appendChild(s);}</script>
 
 <h1 id="socials-networks-links">Socials networks links</h1>
 
 <div class="container socials">
-  <div class="row"><div class="col-sm d-flex justify-content-center" style="padding: 0 !important;">
-      
-      
-        <a class="socials-link" title="github" href="https://github.com/rawfeed/rawfeed-jekyll" target="_blank">github</a><strong class="separator">⨟</strong>
-      
-        <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">rubygems</a><strong class="separator">⨟</strong>
-      
-    </div>
+  <div class="row"><div class="col-sm d-flex justify-content-center" style="padding: 0 !important;"><a class="socials-link" title="github" href="https://github.com/rawfeed/rawfeed-jekyll" target="_blank">github</a><strong class="separator">⨟</strong><a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">rubygems</a><strong class="separator">⨟</strong></div>
 
   </div>
 </div>
@@ -299,7 +299,7 @@
 
 <h2 id="block-raw">Block raw</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">bar</span><span class="p">:</span><span class="w"> </span><span class="s1">'baz'</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%-</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">bar</span><span class="p">:</span><span class="w"> </span><span class="s1">'baz'</span><span class="w"> </span><span class="cp">-%}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
@@ -367,40 +367,45 @@
 
 <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 
-<span class="hll">  <span class="k">let</span> <span class="n">workflow</span><span class="p">:</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="o">&gt;&gt;&gt;</span> <span class="o">=</span> <span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
-</span>    <span class="p">(</span>
-      <span class="s">"My Main Tech Stack"</span><span class="p">,</span>
-      <span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
-        <span class="p">(</span><span class="s">"Languages"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Rust"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">,</span> <span class="s">"Shell Script"</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s">"Frontend"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"HTML"</span><span class="p">,</span> <span class="s">"CSS"</span><span class="p">,</span> <span class="s">"SASS"</span><span class="p">,</span> <span class="s">"Bootstrap"</span><span class="p">,</span> <span class="s">"Jekyll"</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s">"Database"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"PostGreSQL"</span><span class="p">,</span> <span class="s">"MySQL"</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s">"Tools"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"VSCode"</span><span class="p">,</span> <span class="s">"Vim"</span><span class="p">,</span> <span class="s">"JetBrains IDEs"</span><span class="p">,</span> <span class="s">"Git"</span><span class="p">]),</span>
-<span class="hll">        <span class="p">(</span><span class="s">"OS"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Linux"</span><span class="p">,</span> <span class="s">"Windows"</span><span class="p">]),</span>
-</span>      <span class="p">]),</span>
-    <span class="p">),</span>
-  <span class="p">]);</span>
+<span class="hll"><span class="k">let</span> <span class="n">workflow</span><span class="p">:</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="o">&gt;&gt;&gt;</span> <span class="o">=</span> <span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
+</span><span class="p">(</span>
+<span class="s">"My Main Tech Stack"</span><span class="p">,</span>
+<span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
+<span class="p">(</span><span class="s">"Languages"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Rust"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">,</span> <span class="s">"Shell Script"</span><span class="p">]),</span>
+<span class="p">(</span><span class="s">"Frontend"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"HTML"</span><span class="p">,</span> <span class="s">"CSS"</span><span class="p">,</span> <span class="s">"SASS"</span><span class="p">,</span> <span class="s">"Bootstrap"</span><span class="p">,</span> <span class="s">"Jekyll"</span><span class="p">]),</span>
+<span class="p">(</span><span class="s">"Database"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"PostGreSQL"</span><span class="p">,</span> <span class="s">"MySQL"</span><span class="p">]),</span>
+<span class="p">(</span><span class="s">"Tools"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"VSCode"</span><span class="p">,</span> <span class="s">"Vim"</span><span class="p">,</span> <span class="s">"JetBrains IDEs"</span><span class="p">,</span> <span class="s">"Git"</span><span class="p">]),</span>
+<span class="hll"><span class="p">(</span><span class="s">"OS"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Linux"</span><span class="p">,</span> <span class="s">"Windows"</span><span class="p">]),</span>
+</span><span class="p">]),</span>
+<span class="p">),</span>
+<span class="p">]);</span>
 
-  <span class="k">let</span> <span class="n">yt_link</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"https://www.youtube.com/c/williamcanin"</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">yt_link</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"https://www.youtube.com/c/williamcanin"</span><span class="p">;</span>
 
-  <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
-  <span class="nd">println!</span><span class="p">(</span><span class="s">"My name is William, and I am a programming and hacking enthusiast."</span><span class="p">);</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"My name is William, and I am a programming and hacking enthusiast."</span><span class="p">);</span>
 
-  <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="o">&amp;</span><span class="n">workflow</span> <span class="p">{</span>
-    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}:"</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">)</span> <span class="k">in</span> <span class="n">value</span> <span class="p">{</span>
-        <span class="nd">println!</span><span class="p">(</span><span class="s">"  {}: {:?}"</span><span class="p">,</span> <span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="o">&amp;</span><span class="n">workflow</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{}:"</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">)</span> <span class="k">in</span> <span class="n">value</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">" {}: {:?}"</span><span class="p">,</span> <span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
 
-<span class="hll">  <span class="nd">println!</span><span class="p">(</span><span class="s">"YouTube::&gt; {}"</span><span class="p">,</span> <span class="n">yt_link</span><span class="p">);</span>
+<span class="hll"><span class="nd">println!</span><span class="p">(</span><span class="s">"YouTube::&gt; {}"</span><span class="p">,</span> <span class="n">yt_link</span><span class="p">);</span>
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<h1 id="blockcodes">Blockcodes</h1>
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<blockquote>
+  <p>Note: This post create with command: <code class="language-plaintext highlighter-rouge">bundle exec rawfeed create:draft</code>
+And then using the: <code class="language-plaintext highlighter-rouge">bundle exec rawfeed post:draft</code></p>
+</blockquote>
+
+<h1 id="block-codes">Block codes</h1>
 
 <p>An article with various blocks of highlighted code snippets.</p>
 
-<h2 id="html-code-using-crase---">HTML code using crase ` ` `</h2>
+<h2 id="html-code-using-crasis---">HTML code using crasis ` ` `</h2>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span> <span class="nt">&lt;/head&gt;</span>
@@ -410,13 +415,13 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<h2 id="ruby-code-using-crase---">Ruby code using crase ` ` `</h2>
+<h2 id="ruby-code-using-crasis---">Ruby code using crasis ` ` `</h2>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kp">include</span> <span class="no">Enumerable</span>
 
 <span class="k">module</span> <span class="nn">Foo</span>
   <span class="k">class</span> <span class="nc">Bar</span>
-    <span class="no">LIPSUM</span> <span class="o">=</span> <span class="s2">"lorem ipsum dolor sit"</span>
+    <span class="no">LOREM</span> <span class="o">=</span> <span class="s2">"lorem ipsum dolor sit"</span>
 
     <span class="nb">attr_reader</span> <span class="ss">:layout</span>
 
@@ -428,7 +433,7 @@
     <span class="k">def</span> <span class="nf">profile</span>
       <span class="n">measure_time</span> <span class="k">do</span>
         <span class="n">compile</span> <span class="n">layout</span>
-        <span class="n">layout</span><span class="p">.</span><span class="nf">render_with</span> <span class="no">Bar</span><span class="o">::</span><span class="no">LIPSUM</span>
+        <span class="n">layout</span><span class="p">.</span><span class="nf">render_with</span> <span class="no">Bar</span><span class="o">::</span><span class="no">LOREM</span>
       <span class="k">end</span>
     <span class="k">rescue</span> <span class="no">ArgumentError</span>
       <span class="kp">false</span>
@@ -440,7 +445,7 @@
 <span class="no">Foo</span><span class="o">::</span><span class="no">Bar</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">profile</span>
 </code></pre></div></div>
 
-<h2 id="sass-code-using-crase---">Sass code using crase ` ` `</h2>
+<h2 id="sass-code-using-crasis---">Sass code using crasis ` ` `</h2>
 
 <div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s">"base"</span>
 
@@ -455,7 +460,7 @@
 
 <h2 id="block-raw">Block raw</h2>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">bar</span><span class="p">:</span><span class="w"> </span><span class="s1">'baz'</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%-</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">foo</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">bar</span><span class="p">:</span><span class="w"> </span><span class="s1">'baz'</span><span class="w"> </span><span class="cp">-%}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div></div>
 
@@ -523,36 +528,41 @@
 
 <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 
-<span class="hll">  <span class="k">let</span> <span class="n">workflow</span><span class="p">:</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="o">&gt;&gt;&gt;</span> <span class="o">=</span> <span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
-</span>    <span class="p">(</span>
-      <span class="s">"My Main Tech Stack"</span><span class="p">,</span>
-      <span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
-        <span class="p">(</span><span class="s">"Languages"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Rust"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">,</span> <span class="s">"Shell Script"</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s">"Frontend"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"HTML"</span><span class="p">,</span> <span class="s">"CSS"</span><span class="p">,</span> <span class="s">"SASS"</span><span class="p">,</span> <span class="s">"Bootstrap"</span><span class="p">,</span> <span class="s">"Jekyll"</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s">"Database"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"PostGreSQL"</span><span class="p">,</span> <span class="s">"MySQL"</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s">"Tools"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"VSCode"</span><span class="p">,</span> <span class="s">"Vim"</span><span class="p">,</span> <span class="s">"JetBrains IDEs"</span><span class="p">,</span> <span class="s">"Git"</span><span class="p">]),</span>
-<span class="hll">        <span class="p">(</span><span class="s">"OS"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Linux"</span><span class="p">,</span> <span class="s">"Windows"</span><span class="p">]),</span>
-</span>      <span class="p">]),</span>
-    <span class="p">),</span>
-  <span class="p">]);</span>
+<span class="hll"><span class="k">let</span> <span class="n">workflow</span><span class="p">:</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">HashMap</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="nb">str</span><span class="o">&gt;&gt;&gt;</span> <span class="o">=</span> <span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
+</span><span class="p">(</span>
+<span class="s">"My Main Tech Stack"</span><span class="p">,</span>
+<span class="nn">HashMap</span><span class="p">::</span><span class="nf">from</span><span class="p">([</span>
+<span class="p">(</span><span class="s">"Languages"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Rust"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">,</span> <span class="s">"Shell Script"</span><span class="p">]),</span>
+<span class="p">(</span><span class="s">"Frontend"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"HTML"</span><span class="p">,</span> <span class="s">"CSS"</span><span class="p">,</span> <span class="s">"SASS"</span><span class="p">,</span> <span class="s">"Bootstrap"</span><span class="p">,</span> <span class="s">"Jekyll"</span><span class="p">]),</span>
+<span class="p">(</span><span class="s">"Database"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"PostGreSQL"</span><span class="p">,</span> <span class="s">"MySQL"</span><span class="p">]),</span>
+<span class="p">(</span><span class="s">"Tools"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"VSCode"</span><span class="p">,</span> <span class="s">"Vim"</span><span class="p">,</span> <span class="s">"JetBrains IDEs"</span><span class="p">,</span> <span class="s">"Git"</span><span class="p">]),</span>
+<span class="hll"><span class="p">(</span><span class="s">"OS"</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"Linux"</span><span class="p">,</span> <span class="s">"Windows"</span><span class="p">]),</span>
+</span><span class="p">]),</span>
+<span class="p">),</span>
+<span class="p">]);</span>
 
-  <span class="k">let</span> <span class="n">yt_link</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"https://www.youtube.com/c/williamcanin"</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">yt_link</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"https://www.youtube.com/c/williamcanin"</span><span class="p">;</span>
 
-  <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
-  <span class="nd">println!</span><span class="p">(</span><span class="s">"My name is William, and I am a programming and hacking enthusiast."</span><span class="p">);</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"My name is William, and I am a programming and hacking enthusiast."</span><span class="p">);</span>
 
-  <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="o">&amp;</span><span class="n">workflow</span> <span class="p">{</span>
-    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}:"</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">)</span> <span class="k">in</span> <span class="n">value</span> <span class="p">{</span>
-        <span class="nd">println!</span><span class="p">(</span><span class="s">"  {}: {:?}"</span><span class="p">,</span> <span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="o">&amp;</span><span class="n">workflow</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{}:"</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">)</span> <span class="k">in</span> <span class="n">value</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">" {}: {:?}"</span><span class="p">,</span> <span class="n">inner_key</span><span class="p">,</span> <span class="n">inner_value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
 
-<span class="hll">  <span class="nd">println!</span><span class="p">(</span><span class="s">"YouTube::&gt; {}"</span><span class="p">,</span> <span class="n">yt_link</span><span class="p">);</span>
+<span class="hll"><span class="nd">println!</span><span class="p">(</span><span class="s">"YouTube::&gt; {}"</span><span class="p">,</span> <span class="n">yt_link</span><span class="p">);</span>
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<h1 id="theology-h1">Theology (h1)</h1>
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="/rawfeed-jekyll/preview/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<blockquote>
+  <p>Note: This post create with command: <code class="language-plaintext highlighter-rouge">bundle exec rawfeed create:draft</code>
+And then using the: <code class="language-plaintext highlighter-rouge">bundle exec rawfeed post:draft</code></p>
+</blockquote>
+
+<h1 id="theology-h1">Theology (h1)</h1>
 
 <p>Lorem ipsum dolor sit amet, <code class="language-plaintext highlighter-rouge">consectetur</code> adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
 
@@ -712,22 +722,15 @@
 <canvas class="chart" id="chart-sales" data-label="Sales" data-type="bar" data-labels="January,February,March,April,May" data-data="10,13,20,25,50" data-color="#3c7052ff">
 </canvas>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>if(!window.Chart){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/chart.js';document.head.appendChild(s);}</script>
 
 <h1 id="socials-networks-links">Socials networks links</h1>
 
 <div class="container socials">
-  <div class="row"><div class="col-sm d-flex justify-content-center" style="padding: 0 !important;">
-      
-      
-        <a class="socials-link" title="github" href="https://github.com/rawfeed/rawfeed-jekyll" target="_blank">github</a><strong class="separator">⨟</strong>
-      
-        <a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">rubygems</a><strong class="separator">⨟</strong>
-      
-    </div>
+  <div class="row"><div class="col-sm d-flex justify-content-center" style="padding: 0 !important;"><a class="socials-link" title="github" href="https://github.com/rawfeed/rawfeed-jekyll" target="_blank">github</a><strong class="separator">⨟</strong><a class="socials-link" title="rubygems" href="https://rubygems.org/gems/rawfeed" target="_blank">rubygems</a><strong class="separator">⨟</strong></div>
 
   </div>
-</div>]]></content><author><name>William Canin</name></author><category term="example" /><category term="style" /><category term="include" /><category term="chart" /><summary type="html"><![CDATA[This post demonstrates post content styles]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-09-20T16:36:34-03:00</published><updated>2025-09-20T16:36:34-03:00</updated><id>https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll</id><content type="html" xml:base="https://rawfeed.github.io/rawfeed-jekyll/preview/blog/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</div>]]></content><author><name>William Canin</name></author><category term="example" /><category term="style" /><category term="include" /><category term="chart" /><summary type="html"><![CDATA[This post demonstrates post content styles]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/rawfeed-jekyll/preview/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-09-20T16:36:34-03:00</published><updated>2025-09-20T16:36:34-03:00</updated><id>/rawfeed-jekyll/preview/blog/welcome-to-jekyll</id><content type="html" xml:base="/rawfeed-jekyll/preview/blog/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 

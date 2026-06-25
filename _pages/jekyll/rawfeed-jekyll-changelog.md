@@ -10,6 +10,33 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[1.0.1]({{ tag }}/v1.0.1){:target="_blank"}]
+
+**Released on: 2026-07-24**
+
+## Bug
+
+- fix(blog): zero-pad day in search result date format
+
+## [[1.0.0]({{ tag }}/v1.0.0){:target="_blank"}]
+
+**Released on: 2026-07-24**
+
+## Bug
+
+- ci: remove Ruby 3.2 from test matrix (EOL, io-event requires >= 3.3)
+- chore: passed as a direct environment variable to the `ruby/setup-ruby` step
+- chore: disabled github-pages.yml
+- fix(ruby): guard pub plugin against nil theme and improve image minifier security
+  pub.rb: use safe navigation (&.) on site.theme with fallback to site.source; fix hidden file filtering to check basename instead of full path
+  image_minifier.rb: add shell_escape helper to prevent shell injection via filenames
+
+fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
+  - post.rb: use Rawfeed::CONFIG['DRAFTS_DIR'] instead of undefined DRAFTS_DIR constant; dup ARGV to prevent mutation
+  - utils.rb: narrow rescue to ArgumentError instead of bare rescue
+  - tools.rb: check system() exit status and print error on failure
+  - backup.rb: replace colons with hyphens in zip filename for Windows compat; use Regexp.escape to prevent regex injection
+
 ## [[0.3.1]({{ tag }}/v0.3.1){:target="_blank"}]
 
 **Released on: 2026-04-04**

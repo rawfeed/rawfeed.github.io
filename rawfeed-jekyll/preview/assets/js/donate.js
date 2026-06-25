@@ -1,0 +1,26 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const donation = document.getElementById("donation");
+  if (! donation) return;
+
+
+  document.querySelectorAll(".donation__btn--copy").forEach(btn => {
+    btn.addEventListener("click", function() {
+      navigator.clipboard.writeText(this.dataset.copy).then(() => {
+        this.innerText = "Copied!";
+        setTimeout(() => this.innerText = "Copy", 2000);
+      });
+    });
+  });
+
+  // QR MODAL
+  const qrModal = document.getElementById('qrModal');
+  const qrModalImg = document.getElementById('qrModalImg');
+
+  document.querySelectorAll(".clickable-qr").forEach(img => {
+    img.addEventListener("click", function() {
+      if (qrModalImg) {
+        qrModalImg.src = this.dataset.qr;
+      }
+    });
+  });
+});

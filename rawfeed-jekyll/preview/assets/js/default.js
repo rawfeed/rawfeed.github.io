@@ -1,1 +1,207 @@
-document.addEventListener("DOMContentLoaded",()=>{document.addEventListener("contextmenu",e=>e.preventDefault());const c=document.getElementById("avatarModal");if(c){const e=document.querySelectorAll(".avatar-flipper__open-true"),a=document.getElementById("modalAvatar"),s=document.querySelector(".header"),o=new bootstrap.Modal(c);e.forEach(t=>{t.addEventListener("click",()=>{const n=t.querySelector(".avatar-card"),h=t.querySelector(".avatar-back img").src;n.classList.add("flip-avatar"),n.addEventListener("animationend",()=>{n.classList.remove("flip-avatar"),a.src=h,o.show()},{once:!0})})}),c.addEventListener("shown.bs.modal",()=>{a.classList.remove("modal-avatar"),a.offsetWidth,a.classList.add("modal-avatar"),s.classList.remove("modal-active"),e.forEach(t=>t.classList.add("hidden"))}),c.addEventListener("hidden.bs.modal",()=>{e.forEach(t=>t.classList.remove("hidden"))})}const d=document.getElementById("top-link"),f=700;window.addEventListener("scroll",()=>{window.scrollY>f?d.classList.add("show"):d.classList.remove("show")}),d.addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})});function r(e){if(window.giscusThemes){const s={giscus:{setConfig:{theme:e==="light"?window.giscusThemes.light:window.giscusThemes.dark}}},o=setInterval(()=>{const t=document.querySelector("iframe.giscus-frame");t&&(t.contentWindow.postMessage(s,"https://giscus.app"),clearInterval(o))},500);setTimeout(()=>{clearInterval(o)},4e3)}}const i=document.getElementById("toggle-theme"),l=i.querySelector("i"),m=document.documentElement;function u(e){m.setAttribute("data-theme",e),l.classList.remove("fa-sun","fa-moon"),l.classList.add(e==="dark"?"fa-sun":"fa-moon"),typeof r=="function"&&r(e),localStorage.setItem("theme",e)}u(localStorage.getItem("theme")||"light"),i.addEventListener("click",()=>{const a=m.getAttribute("data-theme")==="light"?"dark":"light";u(a)}),document.querySelectorAll("div.highlight, figure.highlight").forEach(e=>{const a=document.createElement("div");a.className="code-block-container";const s=document.createElement("div");s.className="code-block-header";const o=document.createElement("button");o.className="copy-btn",o.type="button",o.setAttribute("aria-label","Copy code");const t=document.createElement("i");t.className="fa-solid fa-clipboard",o.appendChild(t),s.appendChild(o),e.parentNode.insertBefore(a,e),a.appendChild(s),a.appendChild(e),o.addEventListener("click",()=>{const n=e.querySelector("td.code"),v=n?n.innerText.trim():e.innerText.trim();navigator.clipboard.writeText(v).then(()=>{t.className="fa-solid fa-check",setTimeout(()=>t.className="fa-solid fa-clipboard",2e3)},()=>{t.className="fa-solid fa-xmark",setTimeout(()=>t.className="fa-solid fa-clipboard",2e3)})})})});
+document.addEventListener("DOMContentLoaded", () => {
+  /* lock menu context (click right mouse)
+  --------------------------------------------------------------------------------------------------
+  */
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  /* avatar
+  -------------------------------------------------------------------------------------------------
+  */
+  const modalEl = document.getElementById('avatarModal');
+  if (modalEl) {
+    const flipperAvatars = document.querySelectorAll('.avatar-flipper__open-true');
+    const modalAvatar = document.getElementById('modalAvatar');
+    const navigation = document.querySelector('.navigation');
+    const bsModal = new bootstrap.Modal(modalEl);
+
+    flipperAvatars.forEach((flipper) => {
+      flipper.addEventListener("click", () => {
+        const card = flipper.querySelector('.avatar-card');
+        const backImage = flipper.querySelector('.avatar-back img');
+        const backImageSrc = backImage.src;
+
+        card.classList.add("flip-avatar");
+
+        card.addEventListener(
+          "animationend",
+          () => {
+            card.classList.remove("flip-avatar");
+
+            modalAvatar.src = backImageSrc;
+
+            bsModal.show();
+          },
+          { once: true }
+        );
+      });
+    });
+
+    modalEl.addEventListener("shown.bs.modal", () => {
+      modalAvatar.classList.remove("modal-avatar");
+      void modalAvatar.offsetWidth;
+      modalAvatar.classList.add("modal-avatar");
+      navigation.classList.remove("modal-active");
+
+      flipperAvatars.forEach((flipper) => flipper.classList.add("hidden"));
+    });
+
+    modalEl.addEventListener("hidden.bs.modal", () => {
+      flipperAvatars.forEach((flipper) => flipper.classList.remove("hidden"));
+    });
+  }
+
+
+  /* Show/disappear top button
+  --------------------------------------------------------------------------------------------------
+  */
+  const topButton = document.getElementById("top-link");
+  const scrollThreshold = 700;
+
+  if (topButton) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > scrollThreshold) {
+        topButton.classList.add("show");
+      } else {
+        topButton.classList.remove("show");
+      }
+    });
+
+    topButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* function Giscus
+  --------------------------------------------------------------------------------------------------
+  */
+  function setGiscusTheme(theme) {
+    // The function only executes if the themes object exists
+    if (window.giscusThemes) {
+      const giscusTheme = theme === 'light'
+        ? window.giscusThemes.light
+        : window.giscusThemes.dark;
+
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: giscusTheme
+          }
+        }
+      };
+
+      // Let's use a timeout to ensure the Giscus iframe is ready
+      const giscusInterval = setInterval(() => {
+        const giscusFrame = document.querySelector('iframe.giscus-frame');
+        // If the iframe exists in the document...
+        if (giscusFrame) {
+          // ...we sent the message...
+          giscusFrame.contentWindow.postMessage(message, 'https://giscus.app');
+          // ...and we stopped trying.
+          clearInterval(giscusInterval);
+        }
+      }, 500);
+
+      // As an extra safeguard, we stop trying after a few seconds
+      // to avoid creating an infinite loop if something goes wrong.
+      setTimeout(() => {
+        clearInterval(giscusInterval);
+      }, 4000); // Stop trying after 4 seconds
+    }
+  }
+
+  /* change theme light/dark
+  --------------------------------------------------------------------------------------------------
+  */
+  const toggleButton = document.getElementById('toggle-theme');
+  const root = document.documentElement;
+
+  if (toggleButton) {
+    const icon = toggleButton.querySelector('i');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+
+      if (icon) {
+        icon.classList.remove('fa-sun', 'fa-moon');
+        icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
+      }
+
+      if (typeof setGiscusTheme === 'function') {
+        setGiscusTheme(theme);
+      }
+
+      // if (avatar) {
+      //   avatar.src = theme === 'light'
+      //     ? avatar.dataset.light
+      //     : avatar.dataset.dark;
+      // }
+
+      localStorage.setItem('theme', theme);
+
+    }
+
+    // boot with saved or light
+    setTheme(localStorage.getItem('theme') || 'light');
+
+    // change theme on click
+    toggleButton.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      setTheme(next);
+    });
+  }
+
+
+  /* highlight code
+  --------------------------------------------------------------------------------------------------
+  */
+  document.querySelectorAll("div.highlight, figure.highlight").forEach(highlightBlock => {
+    const container = document.createElement("div");
+    container.className = "code-block-container";
+    const header = document.createElement("div");
+    header.className = "code-block-header";
+
+    // button copy
+    const button = document.createElement("button");
+    button.className = "copy-btn";
+    button.type = "button";
+    button.setAttribute("aria-label", "Copy code");
+
+    const icon = document.createElement("i");
+    icon.className = "fa-solid fa-clipboard";
+    button.appendChild(icon);
+
+    header.appendChild(button);
+
+    highlightBlock.parentNode.insertBefore(container, highlightBlock);
+    container.appendChild(header);
+    container.appendChild(highlightBlock);
+  });
+
+  // event delegation for copy buttons (works even on cloned nodes inside <details>)
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".copy-btn");
+    if (!btn) return;
+
+    const container = btn.closest(".code-block-container");
+    if (!container) return;
+
+    const highlightBlock = container.querySelector(".highlight, figure.highlight");
+    if (!highlightBlock) return;
+
+    const codeElement = highlightBlock.querySelector("td.code");
+    const textToCopy = codeElement ? codeElement.innerText.trim() : highlightBlock.innerText.trim();
+
+    const icon = btn.querySelector("i");
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      icon.className = "fa-solid fa-check";
+      setTimeout(() => (icon.className = "fa-solid fa-clipboard"), 2000);
+    }, () => {
+      icon.className = "fa-solid fa-xmark";
+      setTimeout(() => (icon.className = "fa-solid fa-clipboard"), 2000);
+    });
+  });
+
+});
