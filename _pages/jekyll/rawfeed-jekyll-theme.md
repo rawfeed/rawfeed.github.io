@@ -19,57 +19,82 @@ permalink: /rawfeed-jekyll/
 
 # Requirements
 
-| Required | Version | How to verify | How to install                    |
-| -------- | ------- | ------------- | --------------------------------- |
-| Git      | >= 2    | `git -v`      | [Git](http://git-scm.com/){:target="_blank"}        |
-| Ruby     | >= 3.0  | `ruby -v`     | [Ruby](https://www.ruby-lang.org){:target="_blank"} |
-| Gem      | >= 3.0  | `gem -v`      | **Ruby** contains **Gem**         |
-| Bundler  | >= 2.0  | `bundler -v`  | `gem install bundler`             |
-| Node.js  | >= 20   | `node -v`     | [Node.js](https://nodejs.org){:target="_blank"}      |
-| Npm      | >= 9    | `npm -v`      | **NodeJS** contains **Npm**       |
+| Required | Version   | How to verify  | How to install                                       |
+| -------- | --------- | -------------- | ---------------------------------------------------- |
+| Git      | >= 2      | `git -v`       | [Git](http://git-scm.com/){:target="_blank"}         |
+| Ruby     | >= 3.0.0  | `ruby -v`      | [Ruby](https://www.ruby-lang.org){:target="_blank"}  |
+| Gem      | >= 3.0    | `gem -v`       | **Ruby** contains **Gem**                            |
+| Bundler  | >= 2.0    | `bundler -v`   | `gem install bundler`                                |
 
 # Features
 
-- One-command installation (via Unix or PowerShell);
-- A terminal emulator on the home page with commands;
-- Commands for manipulating page headers, posts and drafts in markdown;
+- One-command installation via Ruby gem;
+- A terminal emulator on the home page with interactive commands;
+- Full CLI (`rawfeed`) for managing posts, pages, pixels, and site settings;
 - Smart floating TOC in posts;
 - Theme change: light/dark;
-- Chart in posts;
+- Chart in posts using Chart.js;
 - Stylized Markdown;
-- Avatar opens in modal with inversion animation for each different theme (light/dark);
-- Enables and Disables weblog;
-- Home page with about or blog, you decide with one command;
-- A quick search field on the weblog using keyword and date;
-- Weblog pagination;
-- YouTube video in weblog posts;
-- Social network link on the home page or by command in the terminal;
+- Avatar with flip animation and modal preview for each theme (light/dark);
+- Enable/disable weblog with one command;
+- Home page with about or blog — you decide with one command;
+- Quick search on weblog using keyword (powered by Fuse.js);
+- Weblog pagination (using `jekyll-paginate-v2`);
+- YouTube video embedding in posts;
+- Social network links on the home page or via terminal command;
 - Feed in weblog;
 - SEO-rich website;
-- Entire site minified in build: html, images, css and javascript.
+- Entire site minified in build: html, images, css and javascript;
 - Maintenance page;
-- Comments on blog posts with Giscus or Disqus (only in production [jekyll build]);
-- Google Analytics (only in production [jekyll build]);
-- Page of Pixels (Images)
+- Comments on blog posts with Giscus or Disqus (only in production mode);
+- Google Analytics (only in production mode);
+- Pixels page (image gallery);
+- Resume page with print support;
+- Donation page with QR codes;
+- Contact page with Google Apps Script integration and reCAPTCHA support;
+- Backup your entire site with one command;
 - and more [here](#vendors)
 
 # Installation
 
-Run the command below:
+Run the commands below:
 
 ```shell
-git clone https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"; cd my-site; rm -rf .git; npm install
+git clone https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
+cd my-site
+rm -rf .git
+bundle install
 ```
 
 # Usage
 
-After installation, run the command below to see the **rawfeed** command menu:
+After installation, use the **rawfeed** CLI to manage your site. Run the command below to see all available commands:
 
 ```shell
-npm run help
+bundle exec rawfeed help
 ```
 
+Some common commands:
+
+| Command | Description |
+| ------- | ----------- |
+| `rawfeed serve` | Start the development server |
+| `rawfeed build` | Build the site for production |
+| `rawfeed create:draft` | Create a new draft post |
+| `rawfeed create:page` | Create a new page |
+| `rawfeed create:pixel` | Create a new pixel post |
+| `rawfeed post:draft` | Promote a draft to a published post |
+| `rawfeed home:about` | Set home page to about |
+| `rawfeed home:blog` | Set home page to weblog |
+| `rawfeed blog:enable` / `rawfeed blog:disable` | Enable or disable the weblog |
+| `rawfeed pixels:enable` / `rawfeed pixels:disable` | Enable or disable pixels |
+| `rawfeed minify` | Minify HTML, images and JS in `_site/` |
+| `rawfeed backup` | Create a backup of your site |
+| `rawfeed clean --cache` / `rawfeed clean --all` | Clean Jekyll cache or entire project |
+
 # Settings
+
+Configuration is organized in YAML files under `_data/`. General settings are in `_data/generic.yml`, and page-specific settings are in `_data/screen/` (e.g. `navbar.yml`, `blog.yml`, `footer.yml`, `home.yml`, etc.).
 
 ## Avatar and Favicon
 
@@ -79,8 +104,7 @@ npm run help
 
 > Recommendation: Use a 4x4 image.
 
-**(3)** - In the `_data/options.yml` file, in the `section: [avatar]`, change the value of "`avatar.image`"
-to the name of your images. For example:
+**(3)** - In the `_data/screen/navbar.yml` file, configure the avatar images:
 
 ```yml
 avatar:
@@ -94,7 +118,7 @@ avatar:
     back: your_image_back.png
 ```
 
-For the favicon, you can do the same: place your favicon (.png) in the `assets/images` directory.
+For the favicon, place your favicon (.png) in the `assets/images` directory.
 
 ## Style
 
@@ -119,18 +143,27 @@ If you want to change the MAIN colors of **rawfeed-jekyll**, you can also do tha
 
 ## Posts
 
-Creating a blog post is very easy, first you create a draft (`npm run create:draft`) and after you finish
-the draft, you move it to the post with the command `npm run post:draft`.
+Creating a blog post is very easy, first you create a draft using the CLI:
 
-> Note: If you start the server (`npm run serve`), drafts will appear in posts, but they will not
-go into production mode (`npm run build`).
+```shell
+bundle exec rawfeed create:draft
+```
+
+After you finish writing, promote it to a published post:
+
+```shell
+bundle exec rawfeed post:draft
+```
+
+> Note: If you start the server (`rawfeed serve`), drafts will appear in posts, but they will not
+go into production mode (`rawfeed build`).
 
 **Comments:**
 
 Post comments use [Giscus](https://giscus.app){:target="_blank"} or [Disqus](https://disqus.com){:target="_blank"},
-configurable in the `_data/options.yml` file under `section: [blog]`. Whichever one you choose,
-you must set the appropriate settings in the `_config.yml` file under `section: [blog]`, and
-each post must have `comments: true` set.
+configurable in the `_data/screen/blog.yml` file under the `comments` section. Whichever one you choose,
+you must set the appropriate provider and credentials there, and each post must have `comments: true`
+in its front matter.
 
 To learn more about both, such as how to set them up, visit [Giscus](https://giscus.app){:target="_blank"} or
 [Disqus](https://disqus.com){:target="_blank"}.
@@ -157,7 +190,7 @@ technologies, to whom we would like to thank for their work and availability:
 Click on the image below to be redirected the donation forms:
 
 <div class="donate">
-  <a href="https://github.com/williamcanin/donations/blob/main/README.md">
+  <a class="not_arrow_blank" href="https://williamcanin.github.io/donate/" target="_blank">
     <img width="160" height="100" src="https://raw.githubusercontent.com/williamcanin/donations/main/svg/donate/donate-hand.svg" alt="Donations"/>
   </a>
 </div>
