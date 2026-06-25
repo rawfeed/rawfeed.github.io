@@ -63,7 +63,7 @@ Run the commands below:
 git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
 cd my-site
 rm -rf .git
-bundle install
+npm install
 ```
 
 # Usage
@@ -71,26 +71,26 @@ bundle install
 After installation, use the **rawfeed** CLI to manage your site. Run the command below to see all available commands:
 
 ```shell
-bundle exec rawfeed help
+npm run help
 ```
 
 Some common commands:
 
 | Command | Description |
 | ------- | ----------- |
-| `rawfeed serve` | Start the development server |
-| `rawfeed build` | Build the site for production |
-| `rawfeed create:draft` | Create a new draft post |
-| `rawfeed create:page` | Create a new page |
-| `rawfeed create:pixel` | Create a new pixel post |
-| `rawfeed post:draft` | Promote a draft to a published post |
-| `rawfeed home:about` | Set home page to about |
-| `rawfeed home:blog` | Set home page to weblog |
-| `rawfeed blog:enable` / `rawfeed blog:disable` | Enable or disable the weblog |
-| `rawfeed pixels:enable` / `rawfeed pixels:disable` | Enable or disable pixels |
-| `rawfeed minify` | Minify HTML, images and JS in `_site/` |
-| `rawfeed backup` | Create a backup of your site |
-| `rawfeed clean --cache` / `rawfeed clean --all` | Clean Jekyll cache or entire project |
+| `npm run serve` | Start the development server |
+| `npm run build` | Build the site for production |
+| `npm run create:draft` | Create a new draft post |
+| `npm run create:page` | Create a new page |
+| `npm run create:pixel` | Create a new pixel post |
+| `npm run post:draft` | Promote a draft to a published post |
+| `npm run home:about` | Set home page to about |
+| `npm run home:blog` | Set home page to weblog |
+| `npm run blog:enable` / `npm run blog:disable` | Enable or disable the weblog |
+| `npm run pixels:enable` / `npm run pixels:disable` | Enable or disable pixels |
+| `npm run minify` | Minify HTML, images and JS in `_site/` |
+| `npm run backup` | Create a backup of your site |
+| `npm run clean --cache` / `npm run clean --all` | Clean Jekyll cache or entire project |
 
 # Settings
 
