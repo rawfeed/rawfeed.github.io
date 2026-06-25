@@ -4,7 +4,7 @@ title: "Changelog - rawfeed-jekyll"
 permalink: /rawfeed-jekyll/changelog/
 ---
 
-{%- assign = tag = "/rawfeed-jekyll/releases/tag/" | prepend: "https://github.com/rawfeed" -%}
+{%- assign tag = "/rawfeed-jekyll/releases/tag" | prepend: "https://github.com/rawfeed" -%}
 
 # Changelog - `rawfeed-jekyll`
 
@@ -12,30 +12,84 @@ All important changes to this project are listed here.
 
 ## [[1.0.1]({{ tag }}/v1.0.1){:target="_blank"}]
 
-**Released on: 2026-07-24**
+**Released on: 2026-06-25**
 
-## Bug
+### Bug
 
 - fix(blog): zero-pad day in search result date format
+- fix(blog): search results showing undefined date and link not navigating
+- ci: remove Ruby 3.2 from test matrix (EOL, io-event requires >= 3.3)
+
+### Chore
+
+- update ci.yml
+- pass RAWFEED_DEV_PATH as direct environment variable to ruby/setup-ruby step
+- disable github-pages.yml
+
+---
 
 ## [[1.0.0]({{ tag }}/v1.0.0){:target="_blank"}]
 
-**Released on: 2026-07-24**
+**Released on: 2026-06-24**
 
-## Bug
+### Feature
 
-- ci: remove Ruby 3.2 from test matrix (EOL, io-event requires >= 3.3)
-- chore: passed as a direct environment variable to the `ruby/setup-ruby` step
-- chore: disabled github-pages.yml
+- Add RSpec test suite with 61 examples and CI coverage
+- Add CI workflows for GitHub Actions and GitLab CI (modular)
+- Add `rawfeed build` and `rawfeed serve` commands with Jekyll options passthrough
+- Add `rawfeed backup` command with `--destination` and `--append` options
+- Add `rawfeed new . --force` to create site in current directory
+- Add image minification with webp and avif format conversion
+- Switch blog search from simple-jekyll-search to Fuse.js
+- Add option to enable/disable TOC in post/page front matter
+- Display post tags inline without list markers
+- Add robots.txt in dev and gem builds
+- Add dynamic text behind YAML configuration
+- Add CONTRIBUTING.md, bug report template, PR template
+- Add GitHub contribution templates, release workflow, and changelog generator
+- Add gem http_parser.rb in Gemfile
+
+### Refactor
+
+- Migrate from Node.js to Ruby for minification and cleaning (remove npm dependency)
+- Reorganize `_data` files into 3-level structure (`_data/screen/`)
+- Rename `header` to `navbar`; rename `options.yml` to `generic.yml`
+- Move all Jekyll dependencies from gemspec to Gemfile
+- Replace ruby-vips with mini_magick for image processing
+- Add rubyzip as runtime dependency
+- Modularize library structure into logical subdirectories
+- Change all comments from Portuguese to English
+- Update project slogan
+
+### Bug
+
 - fix(ruby): guard pub plugin against nil theme and improve image minifier security
-  pub.rb: use safe navigation (&.) on site.theme with fallback to site.source; fix hidden file filtering to check basename instead of full path
-  image_minifier.rb: add shell_escape helper to prevent shell injection via filenames
-
-fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
-  - post.rb: use Rawfeed::CONFIG['DRAFTS_DIR'] instead of undefined DRAFTS_DIR constant; dup ARGV to prevent mutation
+  - pub.rb: use safe navigation (&.) on site.theme with fallback to site.source
+  - image_minifier.rb: add shell_escape helper to prevent shell injection via filenames
+- fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
+  - post.rb: use Rawfeed::CONFIG['DRAFTS_DIR'] instead of undefined DRAFTS_DIR constant
   - utils.rb: narrow rescue to ArgumentError instead of bare rescue
   - tools.rb: check system() exit status and print error on failure
-  - backup.rb: replace colons with hyphens in zip filename for Windows compat; use Regexp.escape to prevent regex injection
+  - backup.rb: replace colons with hyphens in zip filename for Windows compat
+- fix(include): load Chart.js script only once to prevent duplicate script tags
+- fix(layout): use bracket notation for CSP hyphen keys; correct update_date variable
+- fix(js): add null guards across multiple scripts to prevent TypeError
+- fix(core): prevent HTML minifier from collapsing whitespace inside pre, code, textarea, svg
+- fix(datelang): correct path error; fix invalid date format `%b %d, %Y`
+- fix: README.md and ci.yml using wrong command (Jekyll instead of rawfeed)
+- fix: add missing front matter to pixel posts
+- fix: remove whitespace between menu-wrap-link and menu items
+- fix: resolve rubyzip loading error in Jekyll theme initialization
+- fix: simplify image minification using ImageMagick system commands
+- fix: prevent nested folder creation with `rawfeed new . --force`
+- fix(robots): rename robots.tx to robots.txt for proper crawler recognition
+- fix: correct GEM_ROOT and template path logic in Installer
+- fix: correct spelling errors across multiple files
+- fix: remove reading_time remnants after deprecation
+- fix: remove date url search
+- fix: various CLI command corrections
+
+---
 
 ## [[0.3.1]({{ tag }}/v0.3.1){:target="_blank"}]
 
@@ -45,6 +99,7 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 
 - Correcting relative URL error
 
+---
 
 ## [[0.3.0]({{ tag }}/v0.3.0){:target="_blank"}]
 
@@ -60,6 +115,7 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 
 - SEO errors have been corrected.
 
+---
 
 ## [[0.2.11]({{ tag }}/v0.2.11){:target="_blank"}]
 
@@ -69,6 +125,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 
 - fix: changing CORS to text/plain instead of json
 
+---
+
 ## [[0.2.10]({{ tag }}/v0.2.10){:target="_blank"}]
 
 **Released on: 2026-03-18**
@@ -76,6 +134,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 ## Bug
 
 - Correcting a bug in the Google Analytics 4 script and adding cookies to the 'config'.
+
+---
 
 ## [[0.2.9]({{ tag }}/v0.2.9){:target="_blank"}]
 
@@ -86,6 +146,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 - SEO improvements
 - Upgrading to Google Analytics 4
 
+---
+
 ## [[0.2.8]({{ tag }}/v0.2.8){:target="_blank"}]
 
 **Released on: 2025-11-05**
@@ -93,6 +155,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 ## Bugfix
 
 - Correcting error in footer that was overlapping the page
+
+---
 
 ## [[0.2.7]({{ tag }}/v0.2.7){:target="_blank"}]
 
@@ -103,6 +167,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 - Set default value for margin-bottom ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/6))
 - Correcting relative URL error in the `pub` layout.
 
+---
+
 ## [[0.2.6]({{ tag }}/v0.2.6){:target="_blank"}]
 
 **Released on: 2025-10-31**
@@ -111,6 +177,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 
 - Fix: Fixes the bug where the pub.html layout is not found in the theme. ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
 
+---
+
 ## [[0.2.5]({{ tag }}/v0.2.5){:target="_blank"}]
 
 **Released on: 2025-10-31**
@@ -118,6 +186,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 ### Added
 
 - Add new feature to `/pub/` ([#5](https://github.com/rawfeed/rawfeed-jekyll/issues/5))
+
+---
 
 ## [[0.2.4]({{ tag }}/v0.2.4){:target="_blank"}]
 
@@ -132,6 +202,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 
 - Changing the Javascripts to fallback.
 
+---
+
 ## [[0.2.3]({{ tag }}/v0.2.3){:target="_blank"}]
 
 **Released on: 2025-10-27**
@@ -139,6 +211,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 ### Bugfix
 
 - It's loading the `_config.yml` file instead of `options.yml` in the plugin `reading_time`
+
+---
 
 ## [[0.2.2]({{ tag }}/v0.2.2){:target="_blank"}]
 
@@ -148,6 +222,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 
 - It's loading the `_config.yml` file instead of `options.yml` in the plugin `datelang`
 
+---
+
 ## [[0.2.1]({{ tag }}/v0.2.1){:target="_blank"}]
 
 **Released on: 2025-10-26**
@@ -155,6 +231,8 @@ fix(ruby): resolve undefined constants, unchecked errors, and backup robustness
 ### Bugfix
 
 - Critical error! Correcting URL error for images on the pixels page.
+
+---
 
 ## [[0.2.0]({{ tag }}/v0.2.0){:target="_blank"}]
 
@@ -274,6 +352,7 @@ reading_time:
   message: ["Read this post in approximately", "Read this post in less than"]
   minutes_label: ["minute", "minutes"]
 ```
+
 ---
 
 ## [[0.1.1]({{ tag }}/v0.1.1){:target="_blank"}]
