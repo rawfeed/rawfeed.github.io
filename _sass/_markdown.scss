@@ -95,6 +95,12 @@
     border-collapse: collapse;
     color: var(--table-color);
     border: 1px solid var(--table-border-color);
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+      th, td {
+        padding: 6px 6px;
+      }
+    }
 
     thead {
       display: table-header-group;

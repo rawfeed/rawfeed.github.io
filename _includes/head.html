@@ -1,6 +1,5 @@
 {%- include data.liquid -%}
 
-<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   {%- if page.url == "/" -%}
@@ -50,6 +49,7 @@
 
   {% comment %} Fonts {% endcomment %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,4 +65,3 @@
 
   {% comment %} feed {% endcomment %}
   <link rel="alternate" type="application/atom+xml" title="{{ site_title }}" href="{{ '/feed.xml' | relative_url }}">
-</head>

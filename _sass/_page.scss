@@ -39,9 +39,11 @@
     min-height: 800px;
     .content {
       color: #181818;
-      width: 860px;
+      max-width: 860px;
+      width: 100%;
       margin: 0 auto;
       padding: 15px;
+
       border-radius: 15px;
       border: 1px solid #131313;
       background-color: #f9f4eb;

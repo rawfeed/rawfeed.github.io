@@ -1,6 +1,6 @@
 .default {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,8 @@
     color: #ffffff;
     background-color: #fff;
     border: 2px solid #181818;
-    width: 85%;
+    width: 95%;
+    max-width: 1200px;
     margin: 0 auto;
     // padding: 40px 0px;
 
@@ -33,9 +34,10 @@
   &-main {
     padding: 2rem 0;
     background-color: #f6f5f2 !important;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: auto;
-    height: 100vh;
+    height: auto;
+    min-height: 300px;
     max-height: 480px;
     .content {
       color: #181818;

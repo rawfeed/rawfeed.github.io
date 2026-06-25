@@ -28,6 +28,41 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(frame);
     });
   }
+  document.querySelectorAll('.content table').forEach(table => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-responsive-wrapper';
+    wrapper.style.overflowX = 'auto';
+    wrapper.style.maxWidth = '100%';
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
+
+  document.querySelectorAll('.content pre').forEach(pre => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'code-copy-wrapper';
+    wrapper.style.position = 'relative';
+
+    const btn = document.createElement('button');
+    btn.className = 'code-copy-btn';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.innerHTML = '<i class="bi bi-clipboard"></i>';
+
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text.trim()).then(() => {
+        btn.innerHTML = '<i class="bi bi-check-lg"></i>';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="bi bi-clipboard"></i>';
+        }, 2000);
+      });
+    });
+
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+    wrapper.appendChild(btn);
+  });
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
