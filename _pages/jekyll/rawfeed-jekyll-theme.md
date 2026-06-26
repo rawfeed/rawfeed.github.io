@@ -55,26 +55,75 @@ permalink: /rawfeed-jekyll/
 - Backup your entire site with one command;
 - and more [here](#vendors)
 
-# Installation
+# Quick Start
 
-Run the commands below:
+## One-line installation interactive (RECOMMENDED)
 
-```shell
+```sh
+sh -c "$(curl -fsSL https://rawfeed.github.io/rawfeed-jekyll/setup.sh)"
+```
+
+The script asks you:
+
+1. **Local [1]** or **Docker [2]** — choose how to run the project
+2. **Project name** — directory name for your site (default: `my-site`)
+
+Then it checks all prerequisites, clones the repo, removes `.git`, and installs dependencies — all automatically.
+
+## Manual installation (Local)
+
+Requires: **Git**, **Ruby >= 3.2**, **RubyGems**, **Node.js**, **npm**, and **Bundler**.
+
+```sh
 git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
 cd my-site
 rm -rf .git
 npm install
 ```
 
+## Manual installation (Docker)
+
+Requires: **Git** and **Docker** (with Compose).
+
+```sh
+git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
+cd my-site
+rm -rf .git
+docker compose up --build
+```
+
+> **Note**: Dependencies (npm + bundler) are installed during the Docker build. If you add new packages later, rebuild with `docker compose build`.
+
+Open [http://localhost:4000](http://localhost:4000) in your browser.
+
+## Useful Docker commands
+
+```sh
+# Run a one-off command (e.g. create a draft)
+docker compose run --rm app npm run create:draft
+
+# Build the site without serving
+docker compose run --rm app npm run build
+
+# Stop the server
+docker compose down
+
+# Rebuild image and reinstall deps after adding gems/packages
+docker compose build
+
+# Full reset (delete volumes and rebuild)
+docker compose down -v && docker compose up --build
+```
+
 # Usage
 
-After installation, use the **rawfeed** CLI to manage your site. Run the command below to see all available commands:
+After installation, see all available commands:
 
-```shell
+```sh
 npm run help
 ```
 
-Some common commands:
+## Some common commands
 
 | Command | Description |
 | ------- | ----------- |
@@ -146,17 +195,17 @@ If you want to change the MAIN colors of **rawfeed-jekyll**, you can also do tha
 Creating a blog post is very easy, first you create a draft using the CLI:
 
 ```shell
-bundle exec rawfeed create:draft
+npm run create:draft
 ```
 
 After you finish writing, promote it to a published post:
 
 ```shell
-bundle exec rawfeed post:draft
+npm run post:draft
 ```
 
-> Note: If you start the server (`rawfeed serve`), drafts will appear in posts, but they will not
-go into production mode (`rawfeed build`).
+> Note: If you start the server (`npm run serve`), drafts will appear in posts, but they will not
+go into production mode (`npm run build`).
 
 **Comments:**
 
