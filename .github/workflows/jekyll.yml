@@ -38,6 +38,10 @@ jobs:
         run: |
           npm run build
 
+      - name: Copy setup.sh to _site/rawfeed-jekyll
+        run: |
+          cp tools/scripts/setup.sh _site/rawfeed-jekyll/setup.sh
+
       - name: Deploy GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
