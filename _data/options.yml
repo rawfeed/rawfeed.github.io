@@ -107,7 +107,7 @@ footer:
     # - { name: "Blog", url: "/blog/" }
     - { name: "Contribute", url: "/contribute/" }
   projects:
-    - { name: "Jekyll Theme", url: "/rawfeed-jekyll/" }
+    - { name: "rawfeed-jekyll", url: "/rawfeed-jekyll/" }
   community:
     - { name: "GitHub", url: "https://github.com/rawfeed" }
   copyright:

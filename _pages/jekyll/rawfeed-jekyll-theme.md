@@ -1,7 +1,7 @@
 ---
 layout: page
 category: product
-title: "Jekyll Theme"
+title: "rawfeed-jekyll"
 repo_name: "`rawfeed-jekyll`"
 description: A raw Jekyll theme for minimalists
 src_url: https://github.com/rawfeed/rawfeed-jekyll
@@ -75,9 +75,9 @@ Then it checks all prerequisites, clones the repo, removes `.git`, and installs 
 Requires: **Git**, **Ruby >= 3.2**, **RubyGems**, **Node.js**, **npm**, and **Bundler**.
 
 ```sh
-git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
-cd my-site
-rm -rf .git
+git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site";
+cd my-site;
+rm -rf .git;
 npm install
 ```
 
@@ -86,9 +86,9 @@ npm install
 Requires: **Git** and **Docker** (with Compose).
 
 ```sh
-git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site"
-cd my-site
-rm -rf .git
+git clone --depth=1 https://github.com/rawfeed/rawfeed-jekyll-starter.git "my-site";
+cd my-site;
+rm -rf .git;
 docker compose up --build
 ```
 
