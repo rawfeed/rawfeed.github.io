@@ -7,26 +7,40 @@
 
   &-body {
     font-family: "Courier New", Courier, monospace !important;
-    color: #000000;
-    background-color: #ffffcc;
-    border: 3px ridge #808080;
+    color: #ffffff;
+    background-color: #fff;
+    border: 2px solid #181818;
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 4px 4px 0 #666666;
+    // padding: 40px 0px;
+
+    a {
+      color: var(--color-link__light) !important;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none !important;
+      &:hover {
+        color: black !important;
+      }
+    }
+    .donate {
+      a{
+        border-bottom: none !important;
+      }
+    }
   }
 
   &-main {
     padding: 2rem 0;
-    background-color: #ffffcc !important;
+    background-color: #f6f5f2 !important;
     overflow-x: auto;
     overflow-y: auto;
     height: auto;
     min-height: 300px;
     max-height: 480px;
-
     .content {
-      color: #000000;
+      color: #181818;
     }
   }
 }

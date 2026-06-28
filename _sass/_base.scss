@@ -6,73 +6,15 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: default;
-}
-
-body {
-  background:
-    radial-gradient(circle, #d4d0c8 1px, transparent 1px);
-  background-size: 20px 20px;
-  background-color: #c0c0c0;
-}
-
-a {
-  text-decoration: underline !important;
-
-  &:link {
-    color: var(--color-link__light) !important;
-  }
-
-  &:visited {
-    color: var(--color-link__visited) !important;
-  }
-
-  &:hover {
-    color: #ff00ff !important;
-    background-color: #ffff00;
-  }
-
-  &[target="_blank"]::after {
-    content: "🢅";
-    font-size: .85em;
-    margin-left: 0.2em;
-    vertical-align: middle;
-    display: inline-block;
-  }
-}
-
-.not_arrow_blank::after {
-  content: "" !important;
-}
-
-hr {
-  border: none;
-  height: 4px;
-  background: transparent;
-  border-top: 2px solid #808080;
-  border-bottom: 2px solid #ffffff;
-  margin: 1.5em 0;
-}
-
-::selection {
-  background: #000080;
-  color: #ffffff;
-}
-
-::-webkit-scrollbar {
-  width: 14px;
-}
-
-::-webkit-scrollbar-track {
-  background: #c0c0c0;
-  border: 1px solid #808080;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #808080;
-  border: 1px solid #555555;
 }
 
 .btn-preview {
   @extend %button;
+}
+
+a[target="_blank"]::after {
+  content: "🢅";
+  font-size: .9em;
+  margin-left: 0.25em;
+  vertical-align: middle;
 }

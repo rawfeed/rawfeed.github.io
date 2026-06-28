@@ -1,39 +1,47 @@
 %button {
-  display: inline-block;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  font-size: 0.9rem;
-  padding: 6px 18px;
+  background: #FFD133;
+  box-shadow: -0.1em -0.3em 0.5em #B39223 inset;
+  color: #4C3D00;
+  border-radius: 0.5em;
+  padding: 10px;
   min-width: 100px;
-  color: #000000;
-  background: #c0c0c0;
-  border: 2px outset #ffffff;
-  border-radius: 0;
-  box-shadow: none;
-  text-decoration: none !important;
-  cursor: pointer;
-
-  &:active {
-    border-style: inset;
-  }
-
-  &:hover {
-    background: #d4d0c8;
-    color: #000000 !important;
-  }
 }
 
 %badge {
-  display: inline-block;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 8px;
-  color: #ffffff;
-  background: #808080;
-  border: 1px solid #000000;
-  line-height: 1.2;
-  vertical-align: middle;
+  --bg-1: #efe6ca;
+  --bg-2: #e1d4b1;
+  --ink: #2b2b1f;
+  --edge: #c6b893;
+  --stitch: rgba(0,0,0,0.06);
+
+  display:inline-block;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight:700;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:0.35em 0.75em;
+  color:var(--ink);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.02) 0px,
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  border:1px solid var(--edge);
+  border-radius:6px;
+  position:relative;
+  line-height:1;
+  vertical-align:middle;
+  opacity: .7;
+}
+
+.not_arrow_blank::after  {
+  content: "" !important;
+  font-size: unset;
+  margin-left: unset;
+  vertical-align: unset;
 }
