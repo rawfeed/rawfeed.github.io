@@ -1,18 +1,24 @@
 .footer {
-  background-color: #181818;
-  color: #f8f8f8;
-  border-top: 4px solid #737373;
+  background-color: #000000;
+  color: #00ff00;
+  border-top: 3px ridge #808080;
   padding: 1rem 0;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-align: center;
 
+  h5 {
+    color: #ffff00;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
   a {
-    color: var(--color-link__dark) !important;
-    text-decoration: none;
+    color: #00ffff !important;
+    text-decoration: underline !important;
     &:hover {
-      text-decoration: underline;
-      color: white !important;
+      color: #ff00ff !important;
+      background-color: transparent;
     }
   }
 }
