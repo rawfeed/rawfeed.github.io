@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     pre.parentNode.insertBefore(wrapper, pre);
     wrapper.appendChild(pre);
-    wrapper.appendChild(btn);
+    pre.appendChild(btn);
   });
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -73,9 +73,10 @@ header:
 
 # section: [blog]
 blog:
+  enable: false
   subtitle: "posts"
   search:
-    enable: true
+    enable: false
     placeholder: "type here to search for a post or Esc to exit"
     button_clean:
       text: "clean"
@@ -108,6 +109,7 @@ footer:
     - { name: "Contribute", url: "/contribute/" }
   projects:
     - { name: "rawfeed-jekyll", url: "/rawfeed-jekyll/" }
+    - { name: "rawfeed-11ty", url: "https://github.com/rawfeed/rawfeed-11ty" }
   community:
     - { name: "GitHub", url: "https://github.com/rawfeed" }
   copyright:

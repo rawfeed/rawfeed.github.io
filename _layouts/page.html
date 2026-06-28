@@ -1,46 +1,51 @@
 {%- include data.liquid -%}
 
 <!DOCTYPE html>
-<html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light" class="page">
+<html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light">
 <head>
   {% include head.html %}
 </head>
-<body class="page-body">
-  {% include header.html %}
-  <main class="container-fluid page-main">
-    <div class="container">
-      {%- if page.url == "/about/" and page.banner -%}
-        <div class="row">
-          <img class="page-banner" src="{{ page.banner }}" alt="{{ page.title }}">
+<body>
+  <div class="retro-wrapper">
+    {% include header.html %}
+    <div class="retro-body">
+      <div class="row g-0">
+        <div class="col-md-3 sidebar-col">
+          {% include sidebar.html %}
         </div>
-      {%- endif -%}
-      <div class="content">
-        {%- if page.category == "product" -%}
-          {%- if page.src_url -%}
-          <div class="row d-flex justify-content-end source-code">
-            <a href="{{page.src_url}}" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <div class="col-md-9 retro-main">
+          <div class="content page-content-inner">
+            {%- if page.url == "/about/" and page.banner -%}
+              <div class="row">
+                <img class="page-banner" src="{{ page.banner }}" alt="{{ page.title }}">
+              </div>
+            {%- endif -%}
+            {%- if page.category == "product" -%}
+              {%- if page.src_url -%}
+              <div class="row d-flex justify-content-end source-code">
+                <a href="{{page.src_url}}" target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+              {%- endif -%}
+            <div style="text-align: center;">
+            <h1>{{ page.title }}{%- if page.repo_name -%} <span style="font-size: .7em">{{ page.repo_name | markdownify }}</span>{%- endif-%}</h1>
+              <small>{{ page.description }}</small>
+              <br>
+              {%- if page.badge.url -%}
+                <a href="{{ page.badge.url }}"><img src="{{ page.badge.img-src }}" alt="{{ page.badge.alt }}" height="{{ page.badge.height }}"></a>
+              {%- endif -%}
+              <br><br>
+              {%- if page.btn.preview.url -%}
+              <a class="btn-preview" href="{{ page.btn.preview.url }}" target="_blank">{{ page.btn.preview.title }}</a>
+              {%- endif -%}
+            </div>
+            {%- endif -%}
+            {{ content | markdownify }}
           </div>
-          {%- endif -%}
-        <div style="text-align: center;">
-        {% comment %} <h1>{{ page.title }}{%- if page.repo_name -%} <span style="font-size: .7em">{{ page.repo_name | markdownify }}</span>{%- endif-%}</h1> {% endcomment %}
-         <h1>{{ page.title }}</h1>
-          <small>{{ page.description }}</small>
-          <br>
-          {%- if page.badge.url -%}
-            <a href="{{ page.badge.url }}"><img src="{{ page.badge.img-src }}" alt="{{ page.badge.alt }}" height="{{ page.badge.height }}"></a>
-          {%- endif -%}
-          <br><br>
-          {%- if page.btn.preview.url -%}
-          <a class="btn-preview" href="{{ page.btn.preview.url }}" target="_blank">{{ page.btn.preview.title }}</a>
-          {%- endif -%}
         </div>
-        {%- endif -%}
-        {{ content | markdownify }}
       </div>
     </div>
-  </main>
-  {% include footer.html %}
+    {% include footer.html %}
+  </div>
   <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
 </body>
 </html>
-

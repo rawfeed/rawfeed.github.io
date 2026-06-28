@@ -1,0 +1,30 @@
+{%- include data.liquid -%}
+<nav class="sidebar">
+  <div class="sidebar-box">
+    <div class="sidebar-title">Navigate</div>
+    <ul>
+      <li><a href="{{ home_url }}" class="sidebar-link">Home</a></li>
+      <li><a href="/about/" class="sidebar-link">About</a></li>
+      <li><a href="/contribute/" class="sidebar-link">Contribute</a></li>
+      {% if blog_.enable %}<li><a href="{{ blog_url }}" class="sidebar-link">Blog</a></li>{% endif %}
+      <li><a href="https://github.com/rawfeed" target="_blank" class="sidebar-link">GitHub</a></li>
+    </ul>
+  </div>
+
+  {% if blog_.enable %}
+  <div class="sidebar-box">
+    <div class="sidebar-title">Search</div>
+    <form action="{{ blog_url }}" method="get" class="sidebar-search">
+      <input type="text" name="search" placeholder="search posts..." />
+    </form>
+  </div>
+  {% endif %}
+
+  <div class="sidebar-box">
+    <div class="sidebar-title">Info</div>
+    <ul>
+      <li>Updated: 2026-06-27</li>
+      <li>Server: GitHub Pages</li>
+    </ul>
+  </div>
+</nav>

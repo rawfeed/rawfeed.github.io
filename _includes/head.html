@@ -7,6 +7,9 @@
   {%- else -%}
     <title>{{ page.title | capitalize }} | {{ site_title }}</title>
   {%- endif -%}
+  {%- if blog_.enable == false and page.url contains '/blog/' -%}
+    <meta http-equiv="refresh" content="0; url={{ home_url }}">
+  {%- endif -%}
 
   <!-- SEO -->
   <meta name="description" content="{{ page.description | capitalize | default: header_.description | strip_html | truncate: 50 }}">

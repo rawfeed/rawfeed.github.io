@@ -1,34 +1,69 @@
-@use "components";
-
 .product-card {
-  border: 1px solid #ccc;
-  background-color: #f9f4eb;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 2px 2px 0 #ccc;
-  transition: 0.2s ease;
-  min-height: 250px;
+  border: 2px ridge #808080;
+  margin-bottom: 12px;
+  background: #ffffff;
+}
 
-  .badge {
-    @extend %badge;
-    &-small {
-      font-size: .87em;
-      color: #8a8a8a;
-      margin: 4px 0px;
-    }
-  }
+.product-card-titlebar {
+  background: linear-gradient(90deg, #000080, #0000cc);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  &:hover {
-    box-shadow: 4px 4px 0 #999;
-    transform: translate(-2px, -2px);
-  }
-  h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #000;
-  }
-  p {
-    font-size: 0.95rem;
-    color: #737373;
-  }
+.product-card-titlebar a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.product-card-titlebar a:hover {
+  color: #ffff00;
+  background: transparent;
+}
+
+.product-card-body {
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.product-card-body a {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.product-card-footer {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.product-card-footer .btn-preview {
+  display: inline-block;
+  padding: 4px 16px;
+  background: #d4d0c8;
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+  border: 2px outset #808080;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.product-card-footer .btn-preview:active {
+  border: 2px inset #808080;
+}
+
+.product-card-footer .btn-preview:hover {
+  background: #ffff00;
+  color: #ff00ff;
+}
+
+.product-card-version {
+  font-size: 11px;
+  color: #999;
+  margin-left: 6px;
 }

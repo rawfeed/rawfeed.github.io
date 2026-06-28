@@ -1,30 +1,35 @@
 {%- include data.liquid -%}
 
-<footer class="footer">
+<footer class="retro-footer">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h5>{{ options.title }} <span style="color: #b1b1b1; font-size: .75rem">Organization</span></h5>
+    <div class="row py-3">
+      <div class="col-md-4 retro-footer-col">
+        <h5>{{ options.title }}</h5>
         <p>{{ options.tagline }}</p>
         <p>Made with ❤️ by <a href="{{ options.author.url }}" target="_blank">{{ options.author.name }}</a></p>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 retro-footer-col">
         <h5>Company</h5>
         {% for link in options.footer.company %}
           <p><a href="{{ link.url }}">{{ link.name }}</a></p>
         {% endfor %}
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 retro-footer-col">
         <h5>Projects</h5>
         {% for link in options.footer.projects %}
           <p><a href="{{ link.url }}">{{ link.name }}</a></p>
         {% endfor %}
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 retro-footer-col">
         <h5>Community</h5>
         {% for link in options.footer.community %}
           <p><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></p>
         {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center retro-footer-bottom">
+        &copy; {{ options.footer.copyright.since }}—2026 {{ options.footer.copyright.title }}. All rights reserved.
       </div>
     </div>
   </div>

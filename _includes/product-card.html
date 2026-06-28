@@ -1,15 +1,31 @@
-{%- include data.liquid -%}
-
-<div class="col-md-4">
-  <div class="product-card">
-    <h3>{{ include.title }} <code>{{ include.slug }}</code></h3>
-    <p>{{ include.description }}</p>
-    {%- if include.version != "" -%}
-    <p>latest version: <a href="{{ include.url }}changelog/#{{ include.version |  replace: ".", "" }}">{{ include.version }}</a></p>
-    <a href="{{ include.url }}">View →</a>
-    {%- else -%}
-      <span class="badge" role="status" aria-label="draft">Shortly!</span>
-      <div class="badge-small"><small>Become a developer! Help this theme get released, <a href="{{ include.url |  prepend: options.github.url }}" target="_blank">contribute!</a></small></div>
-    {%- endif -%}
+<div class="product-card">
+  <div class="product-card-titlebar">
+    <a href="{% if include.status == 'unreleased' and include.github_url %}{{ include.github_url }}{% else %}{{ include.url }}{% endif %}">
+      {{ include.slug }}
+    </a>
+    {% if include.version and include.version != "" %}
+      <span class="product-card-version">v{{ include.version }}</span>
+    {% elsif include.status == "unreleased" %}
+      <span class="product-card-version">Shortly!</span>
+    {% endif %}
+  </div>
+  <div class="product-card-body">
+    <a href="{% if include.status == 'unreleased' and include.github_url %}{{ include.github_url }}{% else %}{{ include.url }}{% endif %}">
+      {{ include.slug }}
+    </a>
+    {% if include.version and include.version != "" %}
+      <small>v{{ include.version }}</small>
+    {% endif %}
+    <p style="margin: 6px 0 0;">{{ include.description }}</p>
+    <div class="product-card-footer">
+      {% if include.status == "unreleased" %}
+        <a class="btn-preview" href="{{ include.github_url }}" target="_blank">Contribute</a>
+        <span style="font-size: 12px; color: #666; line-height: 2;">
+          Become a developer! Help this theme get released, contribute!
+        </span>
+      {% else %}
+        <a class="btn-preview" href="{{ include.url }}">View project</a>
+      {% endif %}
+    </div>
   </div>
 </div>

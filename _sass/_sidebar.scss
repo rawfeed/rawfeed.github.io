@@ -1,0 +1,59 @@
+.sidebar-col {
+  background: #d4d0c8;
+  border-right: none;
+}
+
+.sidebar {
+  padding: 8px;
+  font-size: 13px;
+}
+
+.sidebar-box {
+  border: 2px ridge #808080;
+  margin-bottom: 10px;
+  background: #e8e4d8;
+}
+
+.sidebar-title {
+  background: #000080;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 3px 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+}
+
+.sidebar li {
+  margin: 2px 0;
+}
+
+.sidebar a {
+  color: #0000cc;
+  text-decoration: underline;
+}
+
+.sidebar a:visited {
+  color: #800080;
+}
+
+.sidebar a:hover {
+  color: #ff00ff;
+  background-color: #ffff00;
+  text-decoration: none;
+}
+
+.sidebar-search input {
+  width: 100%;
+  border: 2px inset #808080;
+  padding: 3px 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  background: #ffffff;
+  color: #000000;
+}

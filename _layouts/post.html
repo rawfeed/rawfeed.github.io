@@ -1,9 +1,24 @@
 {%- include data.liquid -%}
 
-<!doctype html>
+<!DOCTYPE html>
 <html id="top" lang="{{ default_.lang | default: 'en-US' }}" data-theme="light">
+<head>
   {% include head.html %}
-  <body>
+</head>
+<body>
+  <div class="retro-wrapper">
+    {% include header.html %}
+    <div class="retro-body">
+      <div class="row g-0">
+        <div class="col-md-3 sidebar-col">
+          {% include sidebar.html %}
+        </div>
+        <div class="col-md-9 retro-main">
+          <div class="content">{{ content }}</div>
+        </div>
+      </div>
+    </div>
     {% include footer.html %}
-  </body>
+  </div>
+</body>
 </html>

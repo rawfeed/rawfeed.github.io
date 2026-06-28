@@ -1,33 +1,52 @@
-.header {
-  background-color: #181818;
-  color: #f8f8f8;
-  padding: 1rem 0;
-  border-bottom: 4px solid #737373;
-  &-title {
-    font-size: 1.8rem;
-    margin: 0 !important;
-    letter-spacing: 1px;
-    a {
-      color: var(--color-link__dark) !important;
-      &:hover {
-        color: #f8f8f8 !important;
-      }
-    }
-  }
-  &-img {
-    border-radius: 6px;
-    margin-bottom: 12px;
-    border: 2px dotted white;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.06) rotate(6deg);
-    }
-  }
-  &-description {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #bbb;
-  }
+.retro-header {
+  background: #000000;
+  border-bottom: 2px ridge #808080;
+  padding: 8px 16px;
 }
 
+.retro-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+.retro-header-img {
+  border: 1px solid #00ff00;
+  padding: 2px;
+  background: #000;
+}
+
+.retro-header-title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.retro-header-title a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.retro-header-title a:hover {
+  color: #ff00ff;
+  background-color: #ffff00;
+  text-decoration: none;
+}
+
+.retro-header-desc {
+  margin: 2px 0 0;
+  color: #00cc99;
+  font-size: 12px;
+}
+
+.retro-banner-bar {
+  background: #000080;
+  color: #ffffff;
+  padding: 2px 0;
+  font-size: 12px;
+  border-bottom: 2px ridge #808080;
+}
+
+.retro-banner-bar marquee {
+  display: block;
+}

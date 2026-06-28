@@ -1,47 +1,36 @@
-%button {
-  background: #FFD133;
-  box-shadow: -0.1em -0.3em 0.5em #B39223 inset;
-  color: #4C3D00;
-  border-radius: 0.5em;
-  padding: 10px;
-  min-width: 100px;
+.btn-preview {
+  display: inline-block;
+  padding: 6px 20px;
+  background: #d4d0c8;
+  color: #000;
+  border: 2px outset #808080;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-%badge {
-  --bg-1: #efe6ca;
-  --bg-2: #e1d4b1;
-  --ink: #2b2b1f;
-  --edge: #c6b893;
-  --stitch: rgba(0,0,0,0.06);
-
-  display:inline-block;
-  font-family: "Georgia", "Times New Roman", serif;
-  font-weight:700;
-  font-size:0.85rem;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  padding:0.35em 0.75em;
-  color:var(--ink);
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(0,0,0,0.02) 0px,
-      rgba(0,0,0,0.02) 1px,
-      transparent 1px,
-      transparent 6px
-    ),
-    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
-  border:1px solid var(--edge);
-  border-radius:6px;
-  position:relative;
-  line-height:1;
-  vertical-align:middle;
-  opacity: .7;
+.btn-preview:active {
+  border: 2px inset #808080;
 }
 
-.not_arrow_blank::after  {
-  content: "" !important;
-  font-size: unset;
-  margin-left: unset;
-  vertical-align: unset;
+.btn-preview:hover {
+  background: #ffff00;
+  color: #ff00ff;
+}
+
+.img-rounded {
+  border: 2px ridge #808080;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
 }

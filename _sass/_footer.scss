@@ -1,18 +1,39 @@
-.footer {
-  background-color: #181818;
-  color: #f8f8f8;
-  border-top: 4px solid #737373;
-  padding: 1rem 0;
-  font-size: 0.85rem;
-  text-align: center;
+.retro-footer {
+  background: #000000;
+  color: #00cc99;
+  border-top: 2px ridge #808080;
+  font-size: 12px;
+}
 
+.retro-footer-col h5 {
+  font-size: 14px;
+  color: #00ff00;
+  margin: 0 0 6px;
+}
 
-  a {
-    color: var(--color-link__dark) !important;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-      color: white !important;
-    }
-  }
+.retro-footer-col p {
+  margin: 2px 0;
+  line-height: 1.5;
+}
+
+.retro-footer-col a {
+  color: #00cc99;
+  text-decoration: underline;
+}
+
+.retro-footer-col a:visited {
+  color: #cc66cc;
+}
+
+.retro-footer-col a:hover {
+  color: #ff00ff;
+  background-color: #ffff00;
+  text-decoration: none;
+}
+
+.retro-footer-bottom {
+  padding: 6px 0;
+  border-top: 1px solid #333333;
+  color: #008866;
+  font-size: 11px;
 }
