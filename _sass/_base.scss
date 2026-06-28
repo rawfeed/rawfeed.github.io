@@ -54,6 +54,46 @@ hr {
   margin: 1.5em 0;
 }
 
+pre.ascii-logo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: #000000;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.theme-listing {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+
+  td {
+    padding: 1em 1.2em;
+    border: 1px solid #808080;
+    background-color: #ffffff;
+    vertical-align: top;
+  }
+
+  h3 {
+    margin: 0 0 0.3em 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0.3em 0;
+  }
+
+  code {
+    font-size: 0.8rem;
+    color: #666666;
+  }
+}
+
 ::selection {
   background: #000080;
   color: #ffffff;

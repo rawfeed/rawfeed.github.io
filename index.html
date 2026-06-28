@@ -4,32 +4,55 @@ title: "Home"
 ---
 
 <div class="container">
-  <section class="text-center mb-5">
-    <h2>Theme workshop</h2>
-    <p>Simple, fast, and minimal themes for your favorite static site generators.</p>
-  </section>
 
-  <div class="row justify-content-center">
-    {% include product-card.html
-       title=""
-       slug="rawfeed-jekyll"
-       version="1.0.2"
-       description="A minimal theme for Jekyll with a console-style aesthetic and fast loading."
-       url="/rawfeed-jekyll/" %}
+  <center>
+    <pre class="ascii-logo">
+  ___  ___  ___  ___  ___  ___
+  | _ \| _ \| __|| __|| __|| __|
+  |   /|   /| _| | _| | _| | _|
+  |_|_\|_|_\|___||___||___||___|
+    </pre>
+    <p><big><strong>Theme Workshop</strong></big><br>
+    Simple, fast, and minimal themes for your favorite static site generators.</p>
+  </center>
 
-    {% include product-card.html
-       title=""
-       slug="rawfeed-11ty"
-       version=""
-       description="A straightforward Eleventy theme with no JS bloat and pure semantic HTML."
-       url="/rawfeed-11ty/" %}
+  <hr>
 
-    <!-- {% include product-card.html
-       title=""
-       slug="rawfeed-astro"
-       version=""
-       description="A lightweight Astro theme for those who love retro design and markdown simplicity."
-       url="/rawfeed-astro/" %} -->
+  <table class="theme-listing" width="100%">
+    <tr>
+      <td width="70%">
+        <h3><a href="/rawfeed-jekyll/">rawfeed-jekyll</a> <code>v1.0.2</code></h3>
+        <p>A minimal theme for Jekyll with a console-style aesthetic and fast loading.</p>
+        <p><a href="/rawfeed-jekyll/">View &rarr;</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>rawfeed-11ty</h3>
+        <p>A straightforward Eleventy theme with no JS bloat and pure semantic HTML.</p>
+        <p><span class="badge">Shortly!</span></p>
+        <p><small>Become a developer! Help this theme get released, <a href="https://github.com/rawfeed" target="_blank">contribute!</a></small></p>
+      </td>
+    </tr>
+  </table>
 
-  </div>
+  <!-- rawfeed-astro commented out until release
+  <table class="theme-listing" width="100%">
+    <tr>
+      <td>
+        <h3>rawfeed-astro</h3>
+        <p>A lightweight Astro theme for those who love retro design and markdown simplicity.</p>
+        <p><span class="badge">Shortly!</span></p>
+      </td>
+    </tr>
+  </table>
+  -->
+
+  <hr>
+
+  <p class="text-center" style="font-size: 0.8rem; color: #666666;">
+    <i class="fa-regular fa-clock"></i> Last updated: 2026-06-27 &bull;
+    Best viewed in <a href="https://www.mozilla.org/" target="_blank">Netscape</a> at 800x600
+  </p>
+
 </div>
