@@ -1,11 +1,13 @@
 .sidebar-col {
   background: #d4d0c8;
   border-right: none;
+  display: flex;
 }
 
 .sidebar {
   padding: 8px;
   font-size: 13px;
+  flex: 1;
 }
 
 .sidebar-box {
