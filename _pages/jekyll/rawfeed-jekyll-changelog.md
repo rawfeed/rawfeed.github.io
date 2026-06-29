@@ -10,6 +10,10 @@ permalink: /rawfeed-jekyll/changelog/
 
 All important changes to this project are listed here.
 
+## [[1.0.3]({{ tag }}/v1.0.3){:target="_blank"}]
+
+---
+
 ## [[1.0.2]({{ tag }}/v1.0.2){:target="_blank"}]
 
 ---
