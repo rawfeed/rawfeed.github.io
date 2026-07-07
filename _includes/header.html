@@ -2,14 +2,21 @@
 
 <header class="retro-header">
   <div class="retro-header-inner">
-    {% comment %} <a href="{{ home_url }}"><img class="retro-header-img" src="{{ '/assets/images/rawfeed.png' | relative_url }}" width="40" height="40" alt="logo"/></a> {% endcomment %}
-    <div>
-      <h1 class="retro-header-title"><a href="{{ home_url }}">{{ header_.title }}</a></h1>
-      <p class="retro-header-desc">{{ header_.description }}</p>
-    </div>
+    <a href="{{ home_url }}" class="logo" id="logo">
+      <span class="brace">{</span
+      ><span class="letter visible">r</span
+      ><span class="letter">a</span
+      ><span class="letter">w</span
+      ><span class="letter visible">f</span
+      ><span class="letter">e</span
+      ><span class="letter">e</span
+      ><span class="letter">d</span
+      ><span class="brace">}</span
+      ><span class="cursor"></span>
+    </a>
   </div>
 </header>
 
 <div class="retro-banner-bar">
-  <marquee behavior="scroll" direction="left" scrollamount="2">{{ options.title }} — {{ options.tagline }}</marquee>
+  <marquee behavior="scroll" direction="left" scrollamount="5">{{ options.title }} — {{ options.tagline }}</marquee>
 </div>

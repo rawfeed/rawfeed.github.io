@@ -9,6 +9,8 @@ _drafts/
 pkg/
 !.vscode/
 
+rawfeed-model.png
+ANNOTATIONS.txt
 ~*
 *.Identifier
 *.bak

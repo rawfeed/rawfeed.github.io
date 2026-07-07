@@ -5,8 +5,8 @@
 }
 
 .product-card-titlebar {
-  background: linear-gradient(90deg, #000080, #0000cc);
-  color: #ffffff;
+  background: linear-gradient(90deg, #181F25, #393F45);
+  color: #FBFBFB;
   font-weight: bold;
   padding: 4px 8px;
   font-size: 12px;
@@ -17,7 +17,7 @@
 }
 
 .product-card-titlebar a {
-  color: #ffffff;
+  color: #FBFBFB;
   text-decoration: none;
 }
 
@@ -34,6 +34,16 @@
 .product-card-body a {
   font-weight: bold;
   font-size: 15px;
+  color: #BA2A2E;
+}
+
+.product-card-body a:visited {
+  color: #800080;
+}
+
+.product-card-body a:hover {
+  color: #ff00ff;
+  background-color: #ffff00;
 }
 
 .product-card-footer {

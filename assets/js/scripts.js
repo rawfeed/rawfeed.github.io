@@ -63,6 +63,23 @@ document.addEventListener("DOMContentLoaded", () => {
     pre.appendChild(btn);
   });
 
+  const logo = document.getElementById('logo');
+  if (logo) {
+    const letters = logo.querySelectorAll('.letter:not(.visible)');
+    letters.forEach((letter, i) => {
+      letter.style.transitionDelay = `${i * 40}ms`;
+    });
+    logo.addEventListener('mouseenter', () => {
+      logo.classList.add('expanded');
+    });
+    logo.addEventListener('mouseleave', () => {
+      letters.forEach((letter, i) => {
+        letter.style.transitionDelay = `${(letters.length - i) * 30}ms`;
+      });
+      logo.classList.remove('expanded');
+    });
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');

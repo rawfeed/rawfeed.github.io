@@ -5,7 +5,7 @@
   {%- if page.url == "/" -%}
     <title>{{ site_title }} | {{ site.baseurl | prepend: site.url }}</title>
   {%- else -%}
-    <title>{{ page.title | capitalize }} | {{ site_title }}</title>
+    <title>{{ page.title }} | {{ site_title }}</title>
   {%- endif -%}
   {%- if blog_.enable == false and page.url contains '/blog/' -%}
     <meta http-equiv="refresh" content="0; url={{ home_url }}">
